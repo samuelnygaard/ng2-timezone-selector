@@ -2,7 +2,8 @@
 
 A simple Angular module to create a timezone selector using [moment-timezone](https://github.com/moment/moment-timezone).
 
-## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
+<!--## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)-->
+## [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
 
 ## Installation
 
@@ -11,6 +12,8 @@ To install this library, run:
 ```bash
 $ npm install ng2-timezone-selector --save
 ```
+
+### Requirements
 
 The library depent on [jQuery](https://github.com/jquery/jquery) and [Select2](https://github.com/select2/select2)
 
@@ -24,6 +27,35 @@ The library depent on [jQuery](https://github.com/jquery/jquery) and [Select2](h
   ...
 </head>
 ```
+
+Alternatively you can install the npm packages `jquery` and `select2`:
+
+```bash
+$ npm install jquery select2 --save
+```
+
+And include the libraries in the `angular-cli.json` file:
+
+```json
+{
+  "project": {
+    ...
+  },
+  "apps": [
+    {
+      ...
+      "styles": [
+        "../node_modules/select2/dist/css/select2.min.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/select2/dist/js/select2.min.js"
+      ],
+      ...
+    }
+```
+
+### Importing
 
 Import the module in `app.module.ts`:
 
