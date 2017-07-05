@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng2-timezone-selector</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	    <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ng2-timezone-selector</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="./index.html">ng2-timezone-selector</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a  href="./overview.html" 
+                                        
+                                         href="./overview.html" 
+                                        
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="./modules/TimezonePickerModule.html" >TimezonePickerModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="./components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="./interfaces/Code.html" >Code</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/Timezone.html" >Timezone</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/Zone.html" >Zone</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="./index.html">ng2-timezone-selector</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a  href="./overview.html" 
+                                               
+                                                href="./overview.html" 
+                                               
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-up"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="./modules/TimezonePickerModule.html" >TimezonePickerModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="./components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="./interfaces/Code.html" >Code</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/Timezone.html" >Timezone</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/Zone.html" >Zone</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content readme">
+                   <div class="content-data">
+<h1 id="ng2-timezone-selector">ng2-timezone-selector</h1>
+<p>A simple Angular module to create a timezone selector using <a href="https://github.com/moment/moment-timezone">moment-timezone</a>.</p>
+<h2 id="-demo-https-samuelnygaard-github-io-ng2-timezone-selector-documentation-https-samuelnygaard-github-io-ng2-timezone-selector-docs-"><a href="https://samuelnygaard.github.io/ng2-timezone-selector/">Demo</a> | <a href="https://samuelnygaard.github.io/ng2-timezone-selector/docs/">Documentation</a></h2>
+<h2 id="installation">Installation</h2>
+<p>To install this library, run:</p>
+<pre class="line-numbers"><code class="language-bash">$ npm install ng2-timezone-selector --save</code></pre><p>The library depent on <a href="https://github.com/jquery/jquery">jQuery</a> and <a href="https://github.com/select2/select2">Select2</a></p>
+<pre class="line-numbers"><code class="language-xml">  &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+  ...
+  &lt;!-- You will need to include the following libraries --&gt;
+  &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
+  ...
+&lt;/head&gt;</code></pre><p>Import the module in <code>app.module.ts</code>:</p>
+<pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#64;angular/core&#39;;
+
+import { AppComponent } from &#39;./app.component&#39;;
+
+// Import the library
+import { TimezonePickerModule } from &#39;ng2-timezone-selector&#39;;
+
+&#64;NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ...,
+    // Include the library in the imports section
+    TimezonePickerModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre><h2 id="usage">Usage</h2>
+<p>Once the library is imported, you can use the component in your Angular application:</p>
+<pre class="line-numbers"><code class="language-xml">&lt;!-- You can now use the library component in app.component.html with double-binding: --&gt;
+&lt;ng2-timezone-picker 
+    [(timezone)]=&quot;user.timezone&quot;
+    [placeholder]=&quot;placeholderString&quot;&gt;
+&lt;/ng2-timezone-picker&gt;</code></pre><pre class="line-numbers"><code class="language-xml">&lt;!-- You can now use the library component in app.component.html or with single-binding and a change function  --&gt;
+&lt;ng2-timezone-picker 
+    [timezone]=&quot;user.timezone&quot;
+    (change)=&quot;changeTimezone($event)&quot;
+    placeholder=&quot;Select timezone&quot;&gt;
+&lt;/ng2-timezone-picker&gt;</code></pre><pre class="line-numbers"><code class="language-typescript">// Example of usage in app.component.ts:
+user = {};
+placeholderString = &#39;Select timezone&#39;;
+
+changeTimezone(timezone) {
+  this.user.timezone = timezone;
+}</code></pre><h2 id="parameters">Parameters</h2>
+<h3 id="component-configuration">Component configuration</h3>
+<p>You can configure component with the following input attributes:</p>
+<ul>
+<li><code>timezone: string</code> - Required: must be defined (but can be null). The timezone string. If you are using the Two-Way Data Binding <code>[(timezone)]=&quot;timezoneString&quot;</code> it will change on selection of timezone. </li>
+<li><code>placeholder: string</code> - Optional: default = <code>&#39;&#39;</code>. The placeholder string to show when no timezone is selected.</li>
+<li><code>disabled: boolean</code> - Optional: default = <code>false</code>. Disable the the component.</li>
+<li><code>allowClear: boolean</code> - Optional: default = <code>false</code>. Enabled you to clear the selection of a timezone.</li>
+</ul>
+<p>You can configure component with the <code>(change)=&quot;changeFunction($event)</code> output attributes:</p>
+<ul>
+<li><code>change: function($event: string)</code> - Trigger-function when timezone is selected or changed, the <code>$event</code> parameter is the timezone string.</li>
+</ul>
+<h2 id="license">License</h2>
+<p>MIT © <a href="mailto:teamnygaard@gmail.com">Samuel Nygaard</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
+
+       <script src="./js/search/search.js"></script>
+       <script src="./js/search/lunr.min.js"></script>
+       <script src="./js/search/search-lunr.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+       <script src="./js/search/search_index.js"></script>
+
+    </body>
+</html>
