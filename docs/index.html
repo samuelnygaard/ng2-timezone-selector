@@ -246,10 +246,12 @@
                    <div class="content-data">
 <h1 id="ng2-timezone-selector">ng2-timezone-selector</h1>
 <p>A simple Angular module to create a timezone selector using <a href="https://github.com/moment/moment-timezone">moment-timezone</a>.</p>
-<h2 id="-demo-https-samuelnygaard-github-io-ng2-timezone-selector-documentation-https-samuelnygaard-github-io-ng2-timezone-selector-docs-"><a href="https://samuelnygaard.github.io/ng2-timezone-selector/">Demo</a> | <a href="https://samuelnygaard.github.io/ng2-timezone-selector/docs/">Documentation</a></h2>
+<!--## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)-->
+<h2 id="-documentation-https-samuelnygaard-github-io-ng2-timezone-selector-docs-"><a href="https://samuelnygaard.github.io/ng2-timezone-selector/docs/">Documentation</a></h2>
 <h2 id="installation">Installation</h2>
 <p>To install this library, run:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm install ng2-timezone-selector --save</code></pre><p>The library depent on <a href="https://github.com/jquery/jquery">jQuery</a> and <a href="https://github.com/select2/select2">Select2</a></p>
+<pre class="line-numbers"><code class="language-bash">$ npm install ng2-timezone-selector --save</code></pre><h3 id="requirements">Requirements</h3>
+<p>The library depent on <a href="https://github.com/jquery/jquery">jQuery</a> and <a href="https://github.com/select2/select2">Select2</a></p>
 <pre class="line-numbers"><code class="language-xml">  &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
   ...
   &lt;!-- You will need to include the following libraries --&gt;
@@ -257,7 +259,25 @@
   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js&quot;&gt;&lt;/script&gt;
   &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
   ...
-&lt;/head&gt;</code></pre><p>Import the module in <code>app.module.ts</code>:</p>
+&lt;/head&gt;</code></pre><p>Alternatively you can install the npm packages <code>jquery</code> and <code>select2</code>:</p>
+<pre class="line-numbers"><code class="language-bash">$ npm install jquery select2 --save</code></pre><p>And include the libraries in the <code>angular-cli.json</code> file:</p>
+<pre class="line-numbers"><code class="language-json">{
+  &quot;project&quot;: {
+    ...
+  },
+  &quot;apps&quot;: [
+    {
+      ...
+      &quot;styles&quot;: [
+        &quot;../node_modules/select2/dist/css/select2.min.css&quot;
+      ],
+      &quot;scripts&quot;: [
+        &quot;../node_modules/jquery/dist/jquery.min.js&quot;,
+        &quot;../node_modules/select2/dist/js/select2.min.js&quot;
+      ],
+      ...
+    }</code></pre><h3 id="importing">Importing</h3>
+<p>Import the module in <code>app.module.ts</code>:</p>
 <pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
 import { NgModule } from &#39;&#64;angular/core&#39;;
 

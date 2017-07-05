@@ -648,7 +648,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>allTimezones:     <code>{}</code>
+                            <code>allTimezones:     <code>any</code>
     </bcode>
                         </td>
                     </tr>
@@ -802,7 +802,7 @@ export class TimezonePickerComponent implements AfterViewInit {
   /**
    * all time zones combined in one array, for each country
    */
-  allTimezones: Timezone[];
+  allTimezones;
 
   /**
    * Contructor function to define all the timezones
