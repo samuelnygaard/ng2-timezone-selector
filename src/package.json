@@ -1,0 +1,26 @@
+{
+  "name": "ng2-timezone-selector",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelnygaard/ng2-timezone-selector"
+  },
+  "author": {
+    "name": "Samuel Nygaard",
+    "email": "teamnygaard@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelnygaard/ng2-timezone-selector/issues"
+  },
+  "module": "ng2-timezone-selector.js",
+  "typings": "ng2-timezone-selector.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
