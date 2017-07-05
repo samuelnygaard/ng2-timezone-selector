@@ -1,5 +1,9 @@
 # ng2-timezone-selector
 
+A simple Angular module to create a timezone selector using [moment-timezone](https://github.com/moment/moment-timezone).
+
+## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
+
 ## Installation
 
 To install this library, run:
@@ -54,12 +58,19 @@ Once the library is imported, you can use the component in your Angular applicat
 
 ```xml
 <!-- You can now use the library component in app.component.html with double-binding: -->
-<ng2-timezone-picker [(timezone)]="user.timezone" [placeholder]="placeholderString"></ng2-timezone-picker>
+<ng2-timezone-picker 
+    [(timezone)]="user.timezone"
+    [placeholder]="placeholderString">
+</ng2-timezone-picker>
 ```
 
 ```xml
 <!-- You can now use the library component in app.component.html or with single-binding and a change function  -->
-<ng2-timezone-picker [timezone]="user.timezone" (change)="changeTimezone($event)" placeholder="Select timezone"></ng2-timezone-picker>
+<ng2-timezone-picker 
+    [timezone]="user.timezone"
+    (change)="changeTimezone($event)"
+    placeholder="Select timezone">
+</ng2-timezone-picker>
 ```
 
 ```typescript

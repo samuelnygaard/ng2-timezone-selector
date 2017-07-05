@@ -3,18 +3,43 @@ import { Component, Output, Input, EventEmitter, ViewEncapsulation, ViewChild, E
 declare let $: any; // Enable use of jQuery
 
 interface Zone {
+  /**
+   * Zone id
+   */
   id: number;
+
+  /**
+   * Country code cca2
+   */
   cca2: string;
+
+  /**
+   * Timezone name, e.g.: 'Europe/Berlin'
+   */
   name: string;
 }
 
 interface Code {
+  /**
+   * Country code cca2
+   */
   cca2: string;
+
+  /**
+   * Country name
+   */
   name: string;
 }
 
 interface Timezone {
+  /**
+   * Country name
+   */
   Country: string;
+
+  /**
+   * Timezone name array
+   */
   Timezones: string[];
 }
 
@@ -29,24 +54,56 @@ interface Timezone {
   </select>`
 })
 export class TimezonePickerComponent implements AfterViewInit {
-  @ViewChild('select') private select: ElementRef;
+  /**
+   * ElementRef for the select element
+   */
+  @ViewChild('select') select: ElementRef;
+
+  /**
+   * Input (optional) bound to [allowClear]
+   */
   @Input() allowClear: boolean = false;
+
+  /**
+   * Input (optional) bound to [disabled]
+   */
   @Input() disabled: boolean = false;
+
+  /**
+   * Input (optional) bound to [placeholder]
+   */
   @Input() placeholder: string = '';
-  @Input() set timezone(z: string) {
-    if(z !== undefined) {
+
+  /**
+   * Input: string (required) bound to [timezone]
+   */
+  @Input() set timezone(timezone: string) {
+    if(timezone !== undefined) {
       if (this.timezone) {
-        this.timezone = z;
+        this.timezone = timezone;
         $(this.select.nativeElement).val(this.timezone).trigger('change');
       }
     }
   }
 
+  /**
+   * Output event bound to (timezone)
+   */
   @Output() timezoneChange = new EventEmitter<string>();
+
+  /**
+   * Output event bound to (change)
+   */
   @Output() change = new EventEmitter<string>();
 
-  allTimezones;
+  /**
+   * all time zones combined in one array, for each country
+   */
+  allTimezones: Timezone[];
 
+  /**
+   * Contructor function to define all the timezones
+   */
   constructor() {
     let result: Timezone[] = [];
     countryCodes.forEach(country => {
@@ -60,6 +117,9 @@ export class TimezonePickerComponent implements AfterViewInit {
     this.allTimezones = result;
   }
 
+  /**
+   * jQuery bounding of select2 framework in the selectElement
+   */
   ngAfterViewInit() {
     let selectElement = $(this.select.nativeElement);
 
@@ -79,12 +139,21 @@ export class TimezonePickerComponent implements AfterViewInit {
     });
   }
 
+  /**
+   * onChange function called by the "select" element
+   * @param timezone The timezone string selected
+   */
   onChange(timezone) {
     this.timezone = timezone;
     this.timezoneChange.emit(timezone);
     this.change.emit(timezone);
   }
 
+  /**
+   * Matcher function to search in the select options
+   * @param params contains the search term
+   * @param data contains the data of each row
+   */
   matcher(params, data) {
     // Always return the object if there is nothing to compare
     if ($.trim(params.term) === '') {

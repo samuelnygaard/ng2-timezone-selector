@@ -1,6 +1,7 @@
 {
   "name": "ng2-timezone-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "A simple Angular module to create a timezone selector using moment-timezone",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",

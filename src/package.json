@@ -1,6 +1,7 @@
 {
   "name": "ng2-timezone-selector",
   "version": "0.1.1",
+  "description": "A simple Angular module to create a timezone selector using moment-timezone",
   "repository": {
     "type": "git",
     "url": "https://github.com/samuelnygaard/ng2-timezone-selector"
