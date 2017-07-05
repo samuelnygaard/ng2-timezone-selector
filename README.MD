@@ -48,6 +48,8 @@ import { TimezonePickerModule } from 'ng2-timezone-selector';
 export class AppModule { }
 ```
 
+## Usage
+
 Once the library is imported, you can use the component in your Angular application:
 
 ```xml
@@ -61,6 +63,7 @@ Once the library is imported, you can use the component in your Angular applicat
 ```
 
 ```typescript
+// Example of usage in app.component.ts:
 user = {};
 placeholderString = 'Select timezone';
 
@@ -69,13 +72,19 @@ changeTimezone(timezone) {
 }
 ```
 
-## Development
+## Parameters
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+### Component configuration
 
-```bash
-$ npm run build
-```
+You can configure component with the following input attributes:
+
+  * `timezone: string` - Required: must be defined (but can be null). The timezone string. If you are using the Two-Way Data Binding `[(timezone)]="timezoneString"` it will change on selection of timezone. 
+  * `placeholder: string` - Optional: default = `''`. The placeholder string to show when no timezone is selected.
+  * `disabled: boolean` - Optional: default = `false`. Disable the the component.
+  * `allowClear: boolean` - Optional: default = `false`. Enabled you to clear the selection of a timezone.
+
+You can configure component with the `(change)="changeFunction($event)` output attributes:
+  * `change: function($event: string)` - Trigger-function when timezone is selected or changed, the `$event` parameter is the timezone string.
 
 ## License
 

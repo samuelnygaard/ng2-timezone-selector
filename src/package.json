@@ -1,6 +1,6 @@
 {
   "name": "ng2-timezone-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/samuelnygaard/ng2-timezone-selector"
@@ -10,7 +10,17 @@
     "email": "teamnygaard@gmail.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "angular 2",
+    "ng2",
+    "timezone",
+    "timezones",
+    "selector",
+    "picker",
+    "moment",
+    "moment-js",
+    "moment-timezone",
+    "timezone selector"
   ],
   "license": "MIT",
   "bugs": {

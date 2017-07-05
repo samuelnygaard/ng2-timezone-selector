@@ -33,12 +33,11 @@ export class TimezonePickerComponent implements AfterViewInit {
   @Input() allowClear: boolean = false;
   @Input() disabled: boolean = false;
   @Input() placeholder: string = '';
-  currentTimezone: string
   @Input() set timezone(z: string) {
     if(z !== undefined) {
-      this.currentTimezone = z;
-      if (this.currentTimezone) {
-        $(this.select.nativeElement).val(this.currentTimezone).trigger('change');
+      if (this.timezone) {
+        this.timezone = z;
+        $(this.select.nativeElement).val(this.timezone).trigger('change');
       }
     }
   }
@@ -70,8 +69,9 @@ export class TimezonePickerComponent implements AfterViewInit {
       matcher: (term, text) => this.matcher(term, text)
     });
 
-    if (this.currentTimezone) {
-      $(selectElement).val(this.currentTimezone).trigger('change');
+    if (this.timezone) {
+        console.log('ngAfterViewInit');
+      $(selectElement).val(this.timezone).trigger('change');
     }
 
     selectElement.on('change', (e: any) => {
@@ -80,7 +80,7 @@ export class TimezonePickerComponent implements AfterViewInit {
   }
 
   onChange(timezone) {
-    this.currentTimezone = timezone;
+    this.timezone = timezone;
     this.timezoneChange.emit(timezone);
     this.change.emit(timezone);
   }
