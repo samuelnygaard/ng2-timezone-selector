@@ -31,3 +31,4 @@ Desktop.ini
 # Build files
 dist/*
 docs/*
+ng2-demo-app/*
