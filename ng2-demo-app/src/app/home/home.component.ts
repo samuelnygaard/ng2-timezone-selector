@@ -10,5 +10,8 @@ export class HomeComponent {
   timezone: string = null;
   disabled = false;
   placeholderString = 'Choose a timezone';
+  onChange(t: string) {
+    console.log(t);
+  }
 
 }
