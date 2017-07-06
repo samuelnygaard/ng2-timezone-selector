@@ -2,8 +2,7 @@
 
 A simple Angular module to create a timezone selector using [moment-timezone](https://github.com/moment/moment-timezone).
 
-<!--## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)-->
-## [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
+## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
 
 ## Installation
 
@@ -21,7 +20,7 @@ The library depent on [jQuery](https://github.com/jquery/jquery) and [Select2](h
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   ...
   <!-- You will need to include the following libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   ...
@@ -89,7 +88,8 @@ export class AppModule { }
 Once the library is imported, you can use the component in your Angular application:
 
 ```xml
-<!-- You can now use the library component in app.component.html with double-binding: -->
+<!-- You can now use the library component
+ in app.component.html with double-binding: -->
 <ng2-timezone-picker 
     [(timezone)]="user.timezone"
     [placeholder]="placeholderString">
@@ -97,7 +97,8 @@ Once the library is imported, you can use the component in your Angular applicat
 ```
 
 ```xml
-<!-- You can now use the library component in app.component.html or with single-binding and a change function  -->
+<!-- You can now use the library component in
+ app.component.html or with single-binding and a change function  -->
 <ng2-timezone-picker 
     [timezone]="user.timezone"
     (change)="changeTimezone($event)"
@@ -121,7 +122,7 @@ changeTimezone(timezone) {
 
 You can configure component with the following input attributes:
 
-  * `timezone: string` - Required: must be defined (but can be null). The timezone string. If you are using the Two-Way Data Binding `[(timezone)]="timezoneString"` it will change on selection of timezone. 
+  * `timezone: string` - Required: must be defined. The timezone string. If you are using the Two-Way Data Binding `[(timezone)]="timezoneString"` it will change on selection of timezone. 
   * `placeholder: string` - Optional: default = `''`. The placeholder string to show when no timezone is selected.
   * `disabled: boolean` - Optional: default = `false`. Disable the the component.
   * `allowClear: boolean` - Optional: default = `false`. Enabled you to clear the selection of a timezone.
