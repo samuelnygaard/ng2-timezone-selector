@@ -1,0 +1,64 @@
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="active item">Home</a>
+        <a class="item" href="/docs">Documentation</a>
+        <!--<a class="item">Company</a>
+        <a class="item">Careers</a>-->
+        <div class="right item">
+          <a class="ui inverted button" href="https://github.com/samuelnygaard/ng2-timezone-selector" target="_blank"><i class="github icon"></i>Github</a>
+          <!--<a class="ui inverted button">Sign Up</a>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        ng2-timezone-selector
+      </h1>
+      <h3>A simple Angular module to create a timezone selector using moment-timezone.</h3>
+      <a class="ui huge button" href="/docs">Documentation <i class="right arrow icon"></i></a>
+    </div>
+
+  </div>
+
+
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Demo</h3>
+      <p>Selected timezone: {{ timezone }}</p>
+        <ng2-timezone-picker [(timezone)]="timezone" [placeholder]="placeholderString" (change)="onChange($event)" [disabled]="disabled"></ng2-timezone-picker>
+        <p></p>
+      <div>
+        <sm-button class="toogle-btn large button" (click)="disabled = !disabled"><i *ngIf="!disabled" class="toggle on icon"></i><i *ngIf="disabled" class="toggle off icon"></i>Toogle Disable attribute</sm-button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="/docs" class="item">Documentation</a>
+            <a href="https://github.com/samuelnygaard/ng2-timezone-selector" class="item">Github</a>
+            <a href="https://www.npmjs.com/package/ng2-timezone-selector" class="item">npm package</a>
+            <a href="https://github.com/samuelnygaard/ng2-timezone-selector/issues" class="item">Bugs</a>
+          </div>
+        </div>
+        <div class="ten wide column">
+          <h4 class="ui inverted header">License</h4>
+          <p>MIT © <a style="color: #fff" href="mailto:teamnygaard@gmail.com">Samuel Nygaard</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
