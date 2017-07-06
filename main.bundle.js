@@ -128,7 +128,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Contents -->\n<div class=\"pusher\">\n  <div class=\"ui inverted vertical masthead center aligned segment\">\n\n    <div class=\"ui container\">\n      <div class=\"ui large secondary inverted pointing menu\">\n        <a class=\"toc item\">\n          <i class=\"sidebar icon\"></i>\n        </a>\n        <a class=\"active item\">Home</a>\n        <a class=\"item\" href=\"/docs\">Documentation</a>\n        <!--<a class=\"item\">Company</a>\n        <a class=\"item\">Careers</a>-->\n        <div class=\"right item\">\n          <a class=\"ui inverted button\" href=\"https://github.com/samuelnygaard/ng2-timezone-selector\" target=\"_blank\"><i class=\"github icon\"></i>Github</a>\n          <!--<a class=\"ui inverted button\">Sign Up</a>-->\n        </div>\n      </div>\n    </div>\n\n    <div class=\"ui text container\">\n      <h1 class=\"ui inverted header\">\n        ng2-timezone-selector\n      </h1>\n      <h3>A simple Angular module to create a timezone selector using moment-timezone.</h3>\n      <a class=\"ui huge button\" href=\"/docs\">Documentation <i class=\"right arrow icon\"></i></a>\n    </div>\n\n  </div>\n\n\n  <div class=\"ui vertical stripe segment\">\n    <div class=\"ui text container\">\n      <h3 class=\"ui header\">Demo</h3>\n      <p>Selected timezone: {{ timezone }}</p>\n        <ng2-timezone-picker [(timezone)]=\"timezone\" [placeholder]=\"placeholderString\" (change)=\"onChange($event)\" [disabled]=\"disabled\"></ng2-timezone-picker>\n        <p></p>\n      <div>\n        <sm-button class=\"toogle-btn large button\" (click)=\"disabled = !disabled\"><i *ngIf=\"!disabled\" class=\"toggle on icon\"></i><i *ngIf=\"disabled\" class=\"toggle off icon\"></i>Toogle Disable attribute</sm-button>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"ui inverted vertical footer segment\">\n    <div class=\"ui container\">\n      <div class=\"ui stackable inverted divided equal height stackable grid\">\n        <div class=\"three wide column\">\n          <h4 class=\"ui inverted header\">About</h4>\n          <div class=\"ui inverted link list\">\n            <a href=\"/docs\" class=\"item\">Documentation</a>\n            <a href=\"https://github.com/samuelnygaard/ng2-timezone-selector\" class=\"item\">Github</a>\n            <a href=\"https://www.npmjs.com/package/ng2-timezone-selector\" class=\"item\">npm package</a>\n            <a href=\"https://github.com/samuelnygaard/ng2-timezone-selector/issues\" class=\"item\">Bugs</a>\n          </div>\n        </div>\n        <div class=\"ten wide column\">\n          <h4 class=\"ui inverted header\">License</h4>\n          <p>MIT © <a style=\"color: #fff\" href=\"mailto:teamnygaard@gmail.com\">Samuel Nygaard</a></p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<!-- Page Contents -->\n<div class=\"pusher\">\n  <div class=\"ui inverted vertical masthead center aligned segment\">\n\n    <div class=\"ui container\">\n      <div class=\"ui large secondary inverted pointing menu\">\n        <a class=\"toc item\">\n          <i class=\"sidebar icon\"></i>\n        </a>\n        <a class=\"active item\">Home</a>\n        <a class=\"item\" href=\"ng2-timezone-selector/docs\">Documentation</a>\n        <!--<a class=\"item\">Company</a>\n        <a class=\"item\">Careers</a>-->\n        <div class=\"right item\">\n          <a class=\"ui inverted button\" href=\"https://github.com/samuelnygaard/ng2-timezone-selector\" target=\"_blank\"><i class=\"github icon\"></i>Github</a>\n          <!--<a class=\"ui inverted button\">Sign Up</a>-->\n        </div>\n      </div>\n    </div>\n\n    <div class=\"ui text container\">\n      <h1 class=\"ui inverted header\">\n        ng2-timezone-selector\n      </h1>\n      <h3>A simple Angular module to create a timezone selector using moment-timezone.</h3>\n      <a class=\"ui huge button\" href=\"ng2-timezone-selector/docs\">Documentation <i class=\"right arrow icon\"></i></a>\n    </div>\n\n  </div>\n\n\n  <div class=\"ui vertical stripe segment\">\n    <div class=\"ui text container\">\n      <h3 class=\"ui header\">Demo</h3>\n      <p>Selected timezone: {{ timezone }}</p>\n        <ng2-timezone-picker [(timezone)]=\"timezone\" [placeholder]=\"placeholderString\" (change)=\"onChange($event)\" [disabled]=\"disabled\"></ng2-timezone-picker>\n        <p></p>\n      <div>\n        <sm-button class=\"toogle-btn large button\" (click)=\"disabled = !disabled\"><i *ngIf=\"!disabled\" class=\"toggle on icon\"></i><i *ngIf=\"disabled\" class=\"toggle off icon\"></i>Toogle Disable attribute</sm-button>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"ui inverted vertical footer segment\">\n    <div class=\"ui container\">\n      <div class=\"ui stackable inverted divided equal height stackable grid\">\n        <div class=\"three wide column\">\n          <h4 class=\"ui inverted header\">About</h4>\n          <div class=\"ui inverted link list\">\n            <a href=\"ng2-timezone-selector/docs\" class=\"item\">Documentation</a>\n            <a href=\"https://github.com/samuelnygaard/ng2-timezone-selector\" class=\"item\">Github</a>\n            <a href=\"https://www.npmjs.com/package/ng2-timezone-selector\" class=\"item\">npm package</a>\n            <a href=\"https://github.com/samuelnygaard/ng2-timezone-selector/issues\" class=\"item\">Bugs</a>\n          </div>\n        </div>\n        <div class=\"ten wide column\">\n          <h4 class=\"ui inverted header\">License</h4>\n          <p>MIT © <a style=\"color: #fff\" href=\"mailto:teamnygaard@gmail.com\">Samuel Nygaard</a></p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -165,23 +165,6 @@ HomeComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
-var environment = {
-    production: false
-};
-//# sourceMappingURL=environment.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -190,12 +173,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
 
 
-
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+if (true) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
