@@ -1,13 +1,19 @@
-import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { Component } from '@angular/core';
-
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor(googleAnalytics: Angulartics2GoogleAnalytics) {
+  timezone: string = null;
+  disabled = false;
+  placeholderString = 'Choose a timezone';
+  onChange(t: string) {
+    console.log(t);
+  }
+  inputChange(e) {
+debugger;    
+    this.placeholderString = e;
   }
 }

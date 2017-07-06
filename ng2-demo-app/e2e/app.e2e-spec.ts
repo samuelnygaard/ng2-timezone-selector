@@ -1,10 +1,10 @@
-import { Ng2DemoAppPage } from './app.po';
+import { NgDemoAppPage } from './app.po';
 
 describe('ng2-demo-app App', () => {
-  let page: Ng2DemoAppPage;
+  let page: NgDemoAppPage;
 
   beforeEach(() => {
-    page = new Ng2DemoAppPage();
+    page = new NgDemoAppPage();
   });
 
   it('should display welcome message', () => {

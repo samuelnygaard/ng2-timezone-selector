@@ -1,27 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { TimezonePickerModule } from 'ng2-timezone-selector';
 
-import { NgSemanticModule } from 'ng-semantic';
-import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-const ROUTES: Routes = [
-  { path: '', component: HomeComponent }
-];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES),
+    FormsModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
-    NgSemanticModule,
     TimezonePickerModule
   ],
   providers: [],
