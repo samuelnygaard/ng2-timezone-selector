@@ -71,6 +71,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/TimezonePickerModule.html" >TimezonePickerModule</a>
                                 </li>
                         </ul>
@@ -87,6 +90,9 @@
                         <ul class="links collapse "
                                 id="xs-components-links"
                             >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
                                 <li class="link">
                                     <a href="../components/TimezonePickerComponent.html"  data-type="entity-link" class="active" >TimezonePickerComponent</a>
                                 </li>
@@ -106,6 +112,12 @@
                         <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
+                                <li class="link">
+                                    <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
                                 </li>
@@ -215,6 +227,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/TimezonePickerModule.html" >TimezonePickerModule</a>
                                        </li>
                                </ul>
@@ -231,6 +246,9 @@
                                <ul class="links collapse "
                                        id="components-links"
                    >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../components/TimezonePickerComponent.html"  data-type="entity-link" class="active" >TimezonePickerComponent</a>
                                        </li>
@@ -250,6 +268,12 @@
                                <ul class="links collapse "
                                        id="injectables-links"
                    >
+                                       <li class="link">
+                                           <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
                                        </li>
@@ -373,12 +397,12 @@
                 <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;select #select id&#x3D;&quot;select&quot; style&#x3D;&quot;width: 100%&quot; class&#x3D;&quot;form-control&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;
   &lt;option&gt;&lt;/option&gt;
   &lt;ng-template let-c ngFor [ngForOf]&#x3D;&quot;allTimezones&quot;&gt;
-    &lt;optgroup *ngIf&#x3D;&quot;c.zones.length &gt; 1&quot; [label]&#x3D;&quot;getCountryName(c.iso)&quot;&gt;
-      &lt;option *ngFor&#x3D;&quot;let t of c.zones&quot; [value]&#x3D;&quot;t&quot;&gt;{{getCountryName(c.iso)}} - {{formatTimezoneString(t)}}
+    &lt;optgroup *ngIf&#x3D;&quot;c.zones.length &gt; 1&quot; [label]&#x3D;&quot;c.iso | iso2CountryPipe&quot;&gt;
+      &lt;option *ngFor&#x3D;&quot;let t of c.zones&quot; [value]&#x3D;&quot;t&quot;&gt;{{c.iso | iso2CountryPipe}} - {{formatTimezoneString(t)}}
           &lt;span *ngIf&#x3D;&quot;showOffset&quot;&gt;{{offsetOfTimezone(t)}}&lt;/span&gt;
       &lt;/option&gt;
     &lt;/optgroup&gt;
-      &lt;option *ngIf&#x3D;&quot;c.zones.length &#x3D;&#x3D;&#x3D; 1&quot; [value]&#x3D;&quot;c.zones[0]&quot;&gt;{{getCountryName(c.iso)}}
+      &lt;option *ngIf&#x3D;&quot;c.zones.length &#x3D;&#x3D;&#x3D; 1&quot; [value]&#x3D;&quot;c.zones[0]&quot;&gt;{{c.iso | iso2CountryPipe}}
         &lt;span *ngIf&#x3D;&quot;showOffset&quot;&gt;{{offsetOfTimezone(c.zones[0])}}&lt;/span&gt;
     &lt;/option&gt;
   &lt;/ng-template&gt;
@@ -441,9 +465,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#formatTimezoneString">formatTimezoneString</a>
-                            </li>
-                            <li>
-                                <a href="#getCountryName">getCountryName</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -844,7 +865,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="162" class="link-to-prism">src/timezone-picker.component.ts:162</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/timezone-picker.component.ts:158</a></div>
                                 </td>
                             </tr>
     
@@ -892,72 +913,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="getCountryName"></a>
-                            <span class="name">
-                                <b>
-                                getCountryName
-                                </b>
-                                <a href="#getCountryName"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>getCountryName(iso: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                        </td>
-                    </tr>
-    
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/timezone-picker.component.ts:158</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
-                                                <tr>
-                                                    <td>Name</td>
-                                                    <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Description</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>iso</td>
-                                                      <td>
-                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                      </td>
-                                                      <td>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-    
-                                </div>
-                                    <div class="io-description">
-                                        
-                                    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <a name="matcher"></a>
                             <span class="name">
                                 <b>
@@ -978,7 +933,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">src/timezone-picker.component.ts:196</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">src/timezone-picker.component.ts:192</a></div>
                                 </td>
                             </tr>
     
@@ -1094,7 +1049,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/timezone-picker.component.ts:167</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/timezone-picker.component.ts:163</a></div>
                                 </td>
                             </tr>
     
@@ -1162,7 +1117,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/timezone-picker.component.ts:185</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="181" class="link-to-prism">src/timezone-picker.component.ts:181</a></div>
                                 </td>
                             </tr>
     
@@ -1232,7 +1187,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="240" class="link-to-prism">src/timezone-picker.component.ts:240</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="236" class="link-to-prism">src/timezone-picker.component.ts:236</a></div>
                                 </td>
                             </tr>
     
@@ -1703,12 +1658,12 @@ import &#x27;select2&#x27;;
   &lt;select #select id&#x3D;&quot;select&quot; style&#x3D;&quot;width: 100%&quot; class&#x3D;&quot;form-control&quot; [disabled]&#x3D;&quot;disabled&quot;&gt;
     &lt;option&gt;&lt;/option&gt;
     &lt;ng-template let-c ngFor [ngForOf]&#x3D;&quot;allTimezones&quot;&gt;
-      &lt;optgroup *ngIf&#x3D;&quot;c.zones.length &gt; 1&quot; [label]&#x3D;&quot;getCountryName(c.iso)&quot;&gt;
-        &lt;option *ngFor&#x3D;&quot;let t of c.zones&quot; [value]&#x3D;&quot;t&quot;&gt;{{getCountryName(c.iso)}} - {{formatTimezoneString(t)}}
+      &lt;optgroup *ngIf&#x3D;&quot;c.zones.length &gt; 1&quot; [label]&#x3D;&quot;c.iso | iso2CountryPipe&quot;&gt;
+        &lt;option *ngFor&#x3D;&quot;let t of c.zones&quot; [value]&#x3D;&quot;t&quot;&gt;{{c.iso | iso2CountryPipe}} - {{formatTimezoneString(t)}}
             &lt;span *ngIf&#x3D;&quot;showOffset&quot;&gt;{{offsetOfTimezone(t)}}&lt;/span&gt;
         &lt;/option&gt;
       &lt;/optgroup&gt;
-        &lt;option *ngIf&#x3D;&quot;c.zones.length &#x3D;&#x3D;&#x3D; 1&quot; [value]&#x3D;&quot;c.zones[0]&quot;&gt;{{getCountryName(c.iso)}}
+        &lt;option *ngIf&#x3D;&quot;c.zones.length &#x3D;&#x3D;&#x3D; 1&quot; [value]&#x3D;&quot;c.zones[0]&quot;&gt;{{c.iso | iso2CountryPipe}}
           &lt;span *ngIf&#x3D;&quot;showOffset&quot;&gt;{{offsetOfTimezone(c.zones[0])}}&lt;/span&gt;
       &lt;/option&gt;
     &lt;/ng-template&gt;
@@ -1840,10 +1795,6 @@ export class TimezonePickerComponent implements AfterViewInit {
     );
   }
 
-  getCountryName(iso: string): string {
-    return this.service.iso2country(iso);
-  }
-
   formatTimezoneString(zone: string): string {
     const arr &#x3D; zone.split(&#x27;/&#x27;);
     return arr[arr.length - 1].replace(&#x27;_&#x27;, &#x27; &#x27;);
@@ -1959,8 +1910,8 @@ export class TimezonePickerComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><select #select id="select" style="width: 100%" class="form-control" [disabled]="disabled">  <option></option>  <ng-template let-c ngFor [ngForOf]="allTimezones">    <optgroup *ngIf="c.zones.length > 1" [label]="getCountryName(c.iso)">      <option *ngFor="let t of c.zones" [value]="t">{{getCountryName(c.iso)}} - {{formatTimezoneString(t)}}          <span *ngIf="showOffset">{{offsetOfTimezone(t)}}</span>      </option>    </optgroup>      <option *ngIf="c.zones.length === 1" [value]="c.zones[0]">{{getCountryName(c.iso)}}        <span *ngIf="showOffset">{{offsetOfTimezone(c.zones[0])}}</span>    </option>  </ng-template></select></div>'
-    var COMPONENTS = [{'name': 'TimezonePickerComponent', 'selector': 'ng2-timezone-picker'}];
+        var COMPONENT_TEMPLATE = '<div><select #select id="select" style="width: 100%" class="form-control" [disabled]="disabled">  <option></option>  <ng-template let-c ngFor [ngForOf]="allTimezones">    <optgroup *ngIf="c.zones.length > 1" [label]="c.iso | iso2CountryPipe">      <option *ngFor="let t of c.zones" [value]="t">{{c.iso | iso2CountryPipe}} - {{formatTimezoneString(t)}}          <span *ngIf="showOffset">{{offsetOfTimezone(t)}}</span>      </option>    </optgroup>      <option *ngIf="c.zones.length === 1" [value]="c.zones[0]">{{c.iso | iso2CountryPipe}}        <span *ngIf="showOffset">{{offsetOfTimezone(c.zones[0])}}</span>    </option>  </ng-template></select></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app'},{'name': 'TimezonePickerComponent', 'selector': 'ng2-timezone-picker'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TimezonePickerComponent'};
 </script>

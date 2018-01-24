@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { TimezonePickerService } from 'ng2-timezone-selector';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-  // viewProviders: [TimezonePickerService]
 })
 export class AppComponent {
   country;

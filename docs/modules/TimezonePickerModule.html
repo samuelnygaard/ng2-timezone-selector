@@ -71,6 +71,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/TimezonePickerModule.html"  data-type="entity-link" class="active" >TimezonePickerModule</a>
                                 </li>
                         </ul>
@@ -87,6 +90,9 @@
                         <ul class="links collapse "
                                 id="xs-components-links"
                             >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
                                 <li class="link">
                                     <a href="../components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
                                 </li>
@@ -106,6 +112,12 @@
                         <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
+                                <li class="link">
+                                    <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
                                 </li>
@@ -215,6 +227,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/TimezonePickerModule.html"  data-type="entity-link" class="active" >TimezonePickerModule</a>
                                        </li>
                                </ul>
@@ -231,6 +246,9 @@
                                <ul class="links collapse "
                                        id="components-links"
                    >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
                                        </li>
@@ -250,6 +268,12 @@
                                <ul class="links collapse "
                                        id="injectables-links"
                    >
+                                       <li class="link">
+                                           <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/TimezonePickerPipe.html" >TimezonePickerPipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
                                        </li>
@@ -442,14 +466,16 @@
 import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { TimezonePickerComponent } from &#x27;./timezone-picker.component&#x27;;
+import { TimezonePickerPipe } from &#x27;./timezone-picker.pipe&#x27;;
 
 export * from &#x27;./timezone-picker.component&#x27;;
+export * from &#x27;./timezone-picker.pipe&#x27;;
 export * from &#x27;./timezone-picker.service&#x27;;
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [TimezonePickerComponent],
-  exports: [TimezonePickerComponent]
+  declarations: [TimezonePickerComponent, TimezonePickerPipe],
+  exports: [TimezonePickerComponent, TimezonePickerPipe]
 })
 export class TimezonePickerModule {
   static forRoot(): ModuleWithProviders {

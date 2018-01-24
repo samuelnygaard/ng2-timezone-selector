@@ -34,15 +34,19 @@
 
   <div class="ui vertical stripe segment">
     <div class="ui text container">
-      <h3 class="ui header">Demo (guessing your timezone):</h3>
+      <h3 class="ui header">Demo:</h3>
+      <p>Utilizing the new timezone-guess feature
+        <a href="https://www.npmjs.com/package/ng2-timezone-selector" target="_blank">(see version 0.2.2 here)</a>
+      </p>
       <p>Selected timezone:
         <b>{{ timezone }}</b>
       </p>
-      <p>Timezone ISO2-code:
+      <p>Timezone country ISO2-code:
         <b>{{ country }}</b>
+        ({{ country | iso2CountryPipe}})
       </p>
-      <!-- <ng2-timezone-picker [(timezone)]="timezone" [placeholder]="placeholderString" (change)="onChange($event)" [(country)]="country"
-        guess="true" showOffset="true" [disabled]="disabled"></ng2-timezone-picker> -->
+      <ng2-timezone-picker [(timezone)]="timezone" [placeholder]="placeholderString" (change)="onChange($event)" [(country)]="country"
+        guess="true" showOffset="true" [disabled]="disabled"></ng2-timezone-picker>
       <p></p>
       <div>
         <button class="ui large button" style="width:287px;" (click)="disabled = !disabled">
@@ -51,7 +55,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
