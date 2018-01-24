@@ -4,7 +4,7 @@ A simple Angular module to create a timezone selector using [moment-timezones](h
 
 ## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
 
-## New features (0.2.1)
+## New features (0.2.2)
 
 * Guess the timezone based on browser settings, usage:
   * `<ng2-timezone-picker [(timezone)]="timezone" guess="true"></ng2-timezone-picker>`
@@ -141,7 +141,7 @@ You can configure component with the following input attributes:
 * `disabled: boolean` - Optional: default = `false`. Disable the the component.
 * `showOffset: boolean` - Optional: default = `false`. Condition to show GMT offset in the dropdown.
 * `guess: boolean` - Optional: default = `false`. If set to `true` and if the `timezone` parameters is `null` or `undefined` then guesses the users timezone.
-* `country: string` - Optional. The country iso-string (e.g. `'US'` / `'UK'`). If you are using the Two-Way Data Binding e.g.: `[(country)]="countryIsoCode"` it will change the timezone to the provided iso-code (if the iso code is valid), and if the timezone is changed it changes the value of `countryIsoCode` to the iso of the country.
+* `country: string` - Optional. The country iso-string (e.g. `'US'` / `'GB'` / `'AU'`). If you are using the Two-Way Data Binding e.g.: `[(country)]="countryIsoCode"` it will change the timezone to the provided iso-code (if the iso code is valid), and if the timezone is changed it changes the value of `countryIsoCode` to the iso of the country.
 * `allowClear: boolean` - Optional: default = `false`. Enabled you to clear the selection of a timezone.
 
 You can configure component with the `(change)="changeFunction($event)` or `(countryChange)="countryIsoCode = $event` output attributes:
