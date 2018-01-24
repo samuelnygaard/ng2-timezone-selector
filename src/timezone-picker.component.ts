@@ -18,12 +18,12 @@ import 'select2';
   <select #select id="select" style="width: 100%" class="form-control" [disabled]="disabled">
     <option></option>
     <ng-template let-c ngFor [ngForOf]="allTimezones">
-      <optgroup *ngIf="c.zones.length > 1" [label]="getCountryName(c.iso)">
-        <option *ngFor="let t of c.zones" [value]="t">{{getCountryName(c.iso)}} - {{formatTimezoneString(t)}}
+      <optgroup *ngIf="c.zones.length > 1" [label]="c.iso | iso2CountryPipe">
+        <option *ngFor="let t of c.zones" [value]="t">{{c.iso | iso2CountryPipe}} - {{formatTimezoneString(t)}}
             <span *ngIf="showOffset">{{offsetOfTimezone(t)}}</span>
         </option>
       </optgroup>
-        <option *ngIf="c.zones.length === 1" [value]="c.zones[0]">{{getCountryName(c.iso)}}
+        <option *ngIf="c.zones.length === 1" [value]="c.zones[0]">{{c.iso | iso2CountryPipe}}
           <span *ngIf="showOffset">{{offsetOfTimezone(c.zones[0])}}</span>
       </option>
     </ng-template>
@@ -153,10 +153,6 @@ export class TimezonePickerComponent implements AfterViewInit {
       this.allTimezones.find(x => x.zones.indexOf(this.currentTimezone) >= 0)
         .iso
     );
-  }
-
-  getCountryName(iso: string): string {
-    return this.service.iso2country(iso);
   }
 
   formatTimezoneString(zone: string): string {

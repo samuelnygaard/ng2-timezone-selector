@@ -7,13 +7,23 @@ export interface Timezone {
 
 @Injectable()
 export class TimezonePickerService {
-  constructor() {}
 
   /**
    * Convert country ISO code to country name (in english)
    */
   iso2country(iso: string): string {
     return countryList[iso] ? countryList[iso] : iso;
+  }
+
+  /**
+   * Gets the list of ISO-codes for all countries
+   */
+  getCountries(): string[] {
+    const res: string[] = [];
+    for (const prop of Object.keys(countryList)) {
+      res.push(prop);
+    }
+    return res;
   }
 
   /**

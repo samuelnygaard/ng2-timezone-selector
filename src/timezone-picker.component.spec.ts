@@ -4,8 +4,7 @@ import { DebugElement } from '@angular/core';
 
 import { TimezonePickerComponent } from './timezone-picker.component';
 
-describe('SampleComponent', () => {
-
+describe('TimezonePickerComponent', () => {
   let comp: TimezonePickerComponent;
   let fixture: ComponentFixture<TimezonePickerComponent>;
   let de: DebugElement;
@@ -13,7 +12,7 @@ describe('SampleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TimezonePickerComponent], // declare the test component
+      declarations: [TimezonePickerComponent] // declare the test component
     });
 
     fixture = TestBed.createComponent(TimezonePickerComponent);
