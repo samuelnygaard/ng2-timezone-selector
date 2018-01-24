@@ -24,19 +24,19 @@
 <title>cluster_TimezonePickerModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="144,-70 144,-268 352,-268 352,-70 144,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_TimezonePickerModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_TimezonePickerModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="153,-78 153,-130 343,-130 343,-78 153,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_TimezonePickerModule_exports</title>
 <polygon fill="none" stroke="#000000" points="152,-208 152,-260 344,-260 344,-208 152,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- TimezonePickerComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>TimezonePickerComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="334.573,-122 161.427,-122 161.427,-86 334.573,-86 334.573,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TimezonePickerComponent</text>
 </g>
 <!-- TimezonePickerModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="323.7907,-187 320.7907,-191 299.7907,-191 296.7907,-187 172.2093,-187 172.2093,-151 323.7907,-151 323.7907,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TimezonePickerModule</text>
 </g>
-<!-- CommonModule&#45;&gt;TimezonePickerModule -->
+<!-- TimezonePickerComponent&#45;&gt;TimezonePickerModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;TimezonePickerModule</title>
+<title>TimezonePickerComponent&#45;&gt;TimezonePickerModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

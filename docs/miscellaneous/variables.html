@@ -1,0 +1,1128 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng2-timezone-selector</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng2-timezone-selector</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">ng2-timezone-selector</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                        <a href="../license.html"
+                                    >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/TimezonePickerModule.html" >TimezonePickerModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/Timezone.html" >Timezone</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">ng2-timezone-selector</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                               <a href="../license.html"
+                                           >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/TimezonePickerModule.html" >TimezonePickerModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/TimezonePickerComponent.html" >TimezonePickerComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/TimezonePickerService.html" >TimezonePickerService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/Timezone.html" >Timezone</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Miscellaneous - Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#countryList">countryList</a>
+                        </li>
+                        <li>
+                            <a href="#zones">zones</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/timezone-picker.service.ts</h3>
+    <section>
+        <h3></h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="countryList"></a>
+                            <span class="name">
+                                <b>
+                                countryList
+                                </b>
+                                <a href="#countryList"><span class="fa fa-link"></span></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>countryList:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>{
+      AF: &#x27;Afghanistan&#x27;,
+      AX: &#x27;Aland Islands&#x27;,
+      AL: &#x27;Albania&#x27;,
+      DZ: &#x27;Algeria&#x27;,
+      AS: &#x27;American Samoa&#x27;,
+      AD: &#x27;Andorra&#x27;,
+      AO: &#x27;Angola&#x27;,
+      AI: &#x27;Anguilla&#x27;,
+      AQ: &#x27;Antarctica&#x27;,
+      AG: &#x27;Antigua and Barbuda&#x27;,
+      AR: &#x27;Argentina&#x27;,
+      AM: &#x27;Armenia&#x27;,
+      AW: &#x27;Aruba&#x27;,
+      AU: &#x27;Australia&#x27;,
+      AT: &#x27;Austria&#x27;,
+      AZ: &#x27;Azerbaijan&#x27;,
+      BS: &#x27;Bahamas&#x27;,
+      BH: &#x27;Bahrain&#x27;,
+      BD: &#x27;Bangladesh&#x27;,
+      BB: &#x27;Barbados&#x27;,
+      BY: &#x27;Belarus&#x27;,
+      BE: &#x27;Belgium&#x27;,
+      BZ: &#x27;Belize&#x27;,
+      BJ: &#x27;Benin&#x27;,
+      BM: &#x27;Bermuda&#x27;,
+      BT: &#x27;Bhutan&#x27;,
+      BO: &#x27;Bolivia&#x27;,
+      BA: &#x27;Bosnia and Herzegovina&#x27;,
+      BW: &#x27;Botswana&#x27;,
+      BV: &#x27;Bouvet Island&#x27;,
+      BR: &#x27;Brazil&#x27;,
+      VG: &#x27;British Virgin Islands&#x27;,
+      IO: &#x27;British Indian Ocean Territory&#x27;,
+      BN: &#x27;Brunei Darussalam&#x27;,
+      BG: &#x27;Bulgaria&#x27;,
+      BF: &#x27;Burkina Faso&#x27;,
+      BI: &#x27;Burundi&#x27;,
+      KH: &#x27;Cambodia&#x27;,
+      CM: &#x27;Cameroon&#x27;,
+      CA: &#x27;Canada&#x27;,
+      CV: &#x27;Cape Verde&#x27;,
+      KY: &#x27;Cayman Islands&#x27;,
+      CF: &#x27;Central African Republic&#x27;,
+      TD: &#x27;Chad&#x27;,
+      CL: &#x27;Chile&#x27;,
+      CN: &#x27;China&#x27;,
+      HK: &#x27;Hong Kong&#x27;,
+      MO: &#x27;Macao&#x27;,
+      CX: &#x27;Christmas Island&#x27;,
+      CC: &#x27;Cocos (Keeling) Islands&#x27;,
+      CO: &#x27;Colombia&#x27;,
+      KM: &#x27;Comoros&#x27;,
+      CG: &#x27;Congo (Brazzaville)&#x27;,
+      CD: &#x27;Congo, (Kinshasa)&#x27;,
+      CK: &#x27;Cook Islands&#x27;,
+      CR: &#x27;Costa Rica&#x27;,
+      CI: &quot;Côte d&#x27;Ivoire&quot;,
+      HR: &#x27;Croatia&#x27;,
+      CU: &#x27;Cuba&#x27;,
+      CY: &#x27;Cyprus&#x27;,
+      CZ: &#x27;Czech Republic&#x27;,
+      DK: &#x27;Denmark&#x27;,
+      DJ: &#x27;Djibouti&#x27;,
+      DM: &#x27;Dominica&#x27;,
+      DO: &#x27;Dominican Republic&#x27;,
+      EC: &#x27;Ecuador&#x27;,
+      EG: &#x27;Egypt&#x27;,
+      SV: &#x27;El Salvador&#x27;,
+      GQ: &#x27;Equatorial Guinea&#x27;,
+      ER: &#x27;Eritrea&#x27;,
+      EE: &#x27;Estonia&#x27;,
+      ET: &#x27;Ethiopia&#x27;,
+      FK: &#x27;Falkland Islands (Malvinas)&#x27;,
+      FO: &#x27;Faroe Islands&#x27;,
+      FJ: &#x27;Fiji&#x27;,
+      FI: &#x27;Finland&#x27;,
+      FR: &#x27;France&#x27;,
+      GF: &#x27;French Guiana&#x27;,
+      PF: &#x27;French Polynesia&#x27;,
+      TF: &#x27;French Southern Territories&#x27;,
+      GA: &#x27;Gabon&#x27;,
+      GM: &#x27;Gambia&#x27;,
+      GE: &#x27;Georgia&#x27;,
+      DE: &#x27;Germany&#x27;,
+      GH: &#x27;Ghana&#x27;,
+      GI: &#x27;Gibraltar&#x27;,
+      GR: &#x27;Greece&#x27;,
+      GL: &#x27;Greenland&#x27;,
+      GD: &#x27;Grenada&#x27;,
+      GP: &#x27;Guadeloupe&#x27;,
+      GU: &#x27;Guam&#x27;,
+      GT: &#x27;Guatemala&#x27;,
+      GG: &#x27;Guernsey&#x27;,
+      GN: &#x27;Guinea&#x27;,
+      GW: &#x27;Guinea-Bissau&#x27;,
+      GY: &#x27;Guyana&#x27;,
+      HT: &#x27;Haiti&#x27;,
+      HM: &#x27;Heard and Mcdonald Islands&#x27;,
+      VA: &#x27;Vatican City State&#x27;,
+      HN: &#x27;Honduras&#x27;,
+      HU: &#x27;Hungary&#x27;,
+      IS: &#x27;Iceland&#x27;,
+      IN: &#x27;India&#x27;,
+      ID: &#x27;Indonesia&#x27;,
+      IR: &#x27;Iran&#x27;,
+      IQ: &#x27;Iraq&#x27;,
+      IE: &#x27;Ireland&#x27;,
+      IM: &#x27;Isle of Man&#x27;,
+      IL: &#x27;Israel&#x27;,
+      IT: &#x27;Italy&#x27;,
+      JM: &#x27;Jamaica&#x27;,
+      JP: &#x27;Japan&#x27;,
+      JE: &#x27;Jersey&#x27;,
+      JO: &#x27;Jordan&#x27;,
+      KZ: &#x27;Kazakhstan&#x27;,
+      KE: &#x27;Kenya&#x27;,
+      KI: &#x27;Kiribati&#x27;,
+      KP: &#x27;Korea (North)&#x27;,
+      KR: &#x27;Korea (South)&#x27;,
+      KW: &#x27;Kuwait&#x27;,
+      KG: &#x27;Kyrgyzstan&#x27;,
+      LA: &#x27;Lao PDR&#x27;,
+      LV: &#x27;Latvia&#x27;,
+      LB: &#x27;Lebanon&#x27;,
+      LS: &#x27;Lesotho&#x27;,
+      LR: &#x27;Liberia&#x27;,
+      LY: &#x27;Libya&#x27;,
+      LI: &#x27;Liechtenstein&#x27;,
+      LT: &#x27;Lithuania&#x27;,
+      LU: &#x27;Luxembourg&#x27;,
+      MK: &#x27;Macedonia&#x27;,
+      MG: &#x27;Madagascar&#x27;,
+      MW: &#x27;Malawi&#x27;,
+      MY: &#x27;Malaysia&#x27;,
+      MV: &#x27;Maldives&#x27;,
+      ML: &#x27;Mali&#x27;,
+      MT: &#x27;Malta&#x27;,
+      MH: &#x27;Marshall Islands&#x27;,
+      MQ: &#x27;Martinique&#x27;,
+      MR: &#x27;Mauritania&#x27;,
+      MU: &#x27;Mauritius&#x27;,
+      YT: &#x27;Mayotte&#x27;,
+      MX: &#x27;Mexico&#x27;,
+      FM: &#x27;Micronesia&#x27;,
+      MD: &#x27;Moldova&#x27;,
+      MC: &#x27;Monaco&#x27;,
+      MN: &#x27;Mongolia&#x27;,
+      ME: &#x27;Montenegro&#x27;,
+      MS: &#x27;Montserrat&#x27;,
+      MA: &#x27;Morocco&#x27;,
+      MZ: &#x27;Mozambique&#x27;,
+      MM: &#x27;Myanmar&#x27;,
+      NA: &#x27;Namibia&#x27;,
+      NR: &#x27;Nauru&#x27;,
+      NP: &#x27;Nepal&#x27;,
+      NL: &#x27;Netherlands&#x27;,
+      AN: &#x27;Netherlands Antilles&#x27;,
+      NC: &#x27;New Caledonia&#x27;,
+      NZ: &#x27;New Zealand&#x27;,
+      NI: &#x27;Nicaragua&#x27;,
+      NE: &#x27;Niger&#x27;,
+      NG: &#x27;Nigeria&#x27;,
+      NU: &#x27;Niue&#x27;,
+      NF: &#x27;Norfolk Island&#x27;,
+      MP: &#x27;Northern Mariana Islands&#x27;,
+      NO: &#x27;Norway&#x27;,
+      OM: &#x27;Oman&#x27;,
+      PK: &#x27;Pakistan&#x27;,
+      PW: &#x27;Palau&#x27;,
+      PS: &#x27;Palestinian Territory&#x27;,
+      PA: &#x27;Panama&#x27;,
+      PG: &#x27;Papua New Guinea&#x27;,
+      PY: &#x27;Paraguay&#x27;,
+      PE: &#x27;Peru&#x27;,
+      PH: &#x27;Philippines&#x27;,
+      PN: &#x27;Pitcairn&#x27;,
+      PL: &#x27;Poland&#x27;,
+      PT: &#x27;Portugal&#x27;,
+      PR: &#x27;Puerto Rico&#x27;,
+      QA: &#x27;Qatar&#x27;,
+      RE: &#x27;Réunion&#x27;,
+      RO: &#x27;Romania&#x27;,
+      RU: &#x27;Russian Federation&#x27;,
+      RW: &#x27;Rwanda&#x27;,
+      BL: &#x27;Saint-Barthélemy&#x27;,
+      SH: &#x27;Saint Helena&#x27;,
+      KN: &#x27;Saint Kitts and Nevis&#x27;,
+      LC: &#x27;Saint Lucia&#x27;,
+      MF: &#x27;Saint-Martin (French part)&#x27;,
+      PM: &#x27;Saint Pierre and Miquelon&#x27;,
+      VC: &#x27;Saint Vincent and Grenadines&#x27;,
+      WS: &#x27;Samoa&#x27;,
+      SM: &#x27;San Marino&#x27;,
+      ST: &#x27;Sao Tome and Principe&#x27;,
+      SA: &#x27;Saudi Arabia&#x27;,
+      SN: &#x27;Senegal&#x27;,
+      RS: &#x27;Serbia&#x27;,
+      SC: &#x27;Seychelles&#x27;,
+      SL: &#x27;Sierra Leone&#x27;,
+      SG: &#x27;Singapore&#x27;,
+      SK: &#x27;Slovakia&#x27;,
+      SI: &#x27;Slovenia&#x27;,
+      SB: &#x27;Solomon Islands&#x27;,
+      SO: &#x27;Somalia&#x27;,
+      ZA: &#x27;South Africa&#x27;,
+      GS: &#x27;South Georgia and the South Sandwich Islands&#x27;,
+      SS: &#x27;South Sudan&#x27;,
+      ES: &#x27;Spain&#x27;,
+      LK: &#x27;Sri Lanka&#x27;,
+      SD: &#x27;Sudan&#x27;,
+      SR: &#x27;Suriname&#x27;,
+      SJ: &#x27;Svalbard and Jan Mayen Islands&#x27;,
+      SZ: &#x27;Swaziland&#x27;,
+      SE: &#x27;Sweden&#x27;,
+      CH: &#x27;Switzerland&#x27;,
+      SY: &#x27;Syria&#x27;,
+      TW: &#x27;Taiwan&#x27;,
+      TJ: &#x27;Tajikistan&#x27;,
+      TZ: &#x27;Tanzania&#x27;,
+      TH: &#x27;Thailand&#x27;,
+      TL: &#x27;Timor-Leste&#x27;,
+      TG: &#x27;Togo&#x27;,
+      TK: &#x27;Tokelau&#x27;,
+      TO: &#x27;Tonga&#x27;,
+      TT: &#x27;Trinidad and Tobago&#x27;,
+      TN: &#x27;Tunisia&#x27;,
+      TR: &#x27;Turkey&#x27;,
+      TM: &#x27;Turkmenistan&#x27;,
+      TC: &#x27;Turks and Caicos Islands&#x27;,
+      TV: &#x27;Tuvalu&#x27;,
+      UG: &#x27;Uganda&#x27;,
+      UA: &#x27;Ukraine&#x27;,
+      AE: &#x27;United Arab Emirates&#x27;,
+      GB: &#x27;United Kingdom (GB)&#x27;,
+      US: &#x27;United States of America (USA)&#x27;,
+      UM: &#x27;US Minor Outlying Islands&#x27;,
+      UY: &#x27;Uruguay&#x27;,
+      UZ: &#x27;Uzbekistan&#x27;,
+      VU: &#x27;Vanuatu&#x27;,
+      VE: &#x27;Venezuela&#x27;,
+      VN: &#x27;Viet Nam&#x27;,
+      VI: &#x27;Virgin Islands, US&#x27;,
+      WF: &#x27;Wallis and Futuna Islands&#x27;,
+      EH: &#x27;Western Sahara&#x27;,
+      YE: &#x27;Yemen&#x27;,
+      ZM: &#x27;Zambia&#x27;,
+      ZW: &#x27;Zimbabwe&#x27;
+    }</code>
+                            </td>
+                        </tr>
+    
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="zones"></a>
+                            <span class="name">
+                                <b>
+                                zones
+                                </b>
+                                <a href="#zones"><span class="fa fa-link"></span></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>zones:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>{
+      AD: [&#x27;Europe/Andorra&#x27;],
+      AE: [&#x27;Asia/Dubai&#x27;],
+      AF: [&#x27;Asia/Kabul&#x27;],
+      AG: [&#x27;America/Antigua&#x27;],
+      AI: [&#x27;America/Anguilla&#x27;],
+      AL: [&#x27;Europe/Tirane&#x27;],
+      AM: [&#x27;Asia/Yerevan&#x27;],
+      AO: [&#x27;Africa/Luanda&#x27;],
+      AQ: [
+        &#x27;Antarctica/McMurdo&#x27;,
+        &#x27;Antarctica/Rothera&#x27;,
+        &#x27;Antarctica/Palmer&#x27;,
+        &#x27;Antarctica/Mawson&#x27;,
+        &#x27;Antarctica/Davis&#x27;,
+        &#x27;Antarctica/Casey&#x27;,
+        &#x27;Antarctica/Vostok&#x27;,
+        &#x27;Antarctica/DumontDUrville&#x27;,
+        &#x27;Antarctica/Syowa&#x27;,
+        &#x27;Antarctica/Troll&#x27;
+      ],
+      AR: [
+        &#x27;America/Argentina/Buenos_Aires&#x27;,
+        &#x27;America/Argentina/Cordoba&#x27;,
+        &#x27;America/Argentina/Salta&#x27;,
+        &#x27;America/Argentina/Jujuy&#x27;,
+        &#x27;America/Argentina/Tucuman&#x27;,
+        &#x27;America/Argentina/Catamarca&#x27;,
+        &#x27;America/Argentina/La_Rioja&#x27;,
+        &#x27;America/Argentina/San_Juan&#x27;,
+        &#x27;America/Argentina/Mendoza&#x27;,
+        &#x27;America/Argentina/San_Luis&#x27;,
+        &#x27;America/Argentina/Rio_Gallegos&#x27;,
+        &#x27;America/Argentina/Ushuaia&#x27;
+      ],
+      AS: [&#x27;Pacific/Pago_Pago&#x27;, &#x27;Pacific/Samoa&#x27;],
+      AT: [&#x27;Europe/Vienna&#x27;],
+      AU: [
+        &#x27;Australia/Lord_Howe&#x27;,
+        &#x27;Antarctica/Macquarie&#x27;,
+        &#x27;Australia/Hobart&#x27;,
+        &#x27;Australia/Currie&#x27;,
+        &#x27;Australia/Melbourne&#x27;,
+        &#x27;Australia/Sydney&#x27;,
+        &#x27;Australia/Broken_Hill&#x27;,
+        &#x27;Australia/Brisbane&#x27;,
+        &#x27;Australia/Lindeman&#x27;,
+        &#x27;Australia/Adelaide&#x27;,
+        &#x27;Australia/Darwin&#x27;,
+        &#x27;Australia/Perth&#x27;,
+        &#x27;Australia/Eucla&#x27;,
+        &#x27;Australia/Canberra&#x27;,
+        &#x27;Australia/Queensland&#x27;,
+        &#x27;Australia/Tasmania&#x27;,
+        &#x27;Australia/Victoria&#x27;
+      ],
+      AW: [&#x27;America/Aruba&#x27;],
+      AX: [&#x27;Europe/Mariehamn&#x27;],
+      AZ: [&#x27;Asia/Baku&#x27;],
+      BA: [&#x27;Europe/Sarajevo&#x27;],
+      BB: [&#x27;America/Barbados&#x27;],
+      BD: [&#x27;Asia/Dhaka&#x27;],
+      BE: [&#x27;Europe/Brussels&#x27;],
+      BF: [&#x27;Africa/Ouagadougou&#x27;],
+      BG: [&#x27;Europe/Sofia&#x27;],
+      BH: [&#x27;Asia/Bahrain&#x27;],
+      BI: [&#x27;Africa/Bujumbura&#x27;],
+      BJ: [&#x27;Africa/Porto-Novo&#x27;],
+      BL: [&#x27;America/St_Barthelemy&#x27;],
+      BM: [&#x27;Atlantic/Bermuda&#x27;],
+      BN: [&#x27;Asia/Brunei&#x27;],
+      BO: [&#x27;America/La_Paz&#x27;],
+      BQ: [&#x27;America/Kralendijk&#x27;],
+      BR: [
+        &#x27;America/Noronha&#x27;,
+        &#x27;America/Belem&#x27;,
+        &#x27;America/Fortaleza&#x27;,
+        &#x27;America/Recife&#x27;,
+        &#x27;America/Araguaina&#x27;,
+        &#x27;America/Maceio&#x27;,
+        &#x27;America/Bahia&#x27;,
+        &#x27;America/Sao_Paulo&#x27;,
+        &#x27;America/Campo_Grande&#x27;,
+        &#x27;America/Cuiaba&#x27;,
+        &#x27;America/Santarem&#x27;,
+        &#x27;America/Porto_Velho&#x27;,
+        &#x27;America/Boa_Vista&#x27;,
+        &#x27;America/Manaus&#x27;,
+        &#x27;America/Eirunepe&#x27;,
+        &#x27;America/Rio_Branco&#x27;
+      ],
+      BS: [&#x27;America/Nassau&#x27;],
+      BT: [&#x27;Asia/Thimphu&#x27;],
+      BW: [&#x27;Africa/Gaborone&#x27;],
+      BY: [&#x27;Europe/Minsk&#x27;],
+      BZ: [&#x27;America/Belize&#x27;],
+      CA: [
+        &#x27;America/St_Johns&#x27;,
+        &#x27;America/Halifax&#x27;,
+        &#x27;America/Glace_Bay&#x27;,
+        &#x27;America/Moncton&#x27;,
+        &#x27;America/Goose_Bay&#x27;,
+        &#x27;America/Blanc-Sablon&#x27;,
+        &#x27;America/Toronto&#x27;,
+        &#x27;America/Nipigon&#x27;,
+        &#x27;America/Thunder_Bay&#x27;,
+        &#x27;America/Iqaluit&#x27;,
+        &#x27;America/Pangnirtung&#x27;,
+        &#x27;America/Resolute&#x27;,
+        &#x27;America/Atikokan&#x27;,
+        &#x27;America/Rankin_Inlet&#x27;,
+        &#x27;America/Winnipeg&#x27;,
+        &#x27;America/Rainy_River&#x27;,
+        &#x27;America/Regina&#x27;,
+        &#x27;America/Swift_Current&#x27;,
+        &#x27;America/Edmonton&#x27;,
+        &#x27;America/Cambridge_Bay&#x27;,
+        &#x27;America/Yellowknife&#x27;,
+        &#x27;America/Inuvik&#x27;,
+        &#x27;America/Creston&#x27;,
+        &#x27;America/Dawson_Creek&#x27;,
+        &#x27;America/Vancouver&#x27;,
+        &#x27;America/Whitehorse&#x27;,
+        &#x27;America/Dawson&#x27;,
+        &#x27;America/Montreal&#x27;,
+        &#x27;Canada/Atlantic&#x27;,
+        &#x27;Canada/Central&#x27;,
+        &#x27;Canada/Eastern&#x27;,
+        &#x27;Canada/Mountain&#x27;,
+        &#x27;Canada/Newfoundland&#x27;,
+        &#x27;Canada/Pacific&#x27;,
+        &#x27;Canada/Saskatchewan&#x27;,
+        &#x27;Canada/Yukon&#x27;
+      ],
+      CC: [&#x27;Indian/Cocos&#x27;],
+      CD: [&#x27;Africa/Kinshasa&#x27;, &#x27;Africa/Lubumbashi&#x27;],
+      CF: [&#x27;Africa/Bangui&#x27;],
+      CG: [&#x27;Africa/Brazzaville&#x27;],
+      CH: [&#x27;Europe/Zurich&#x27;],
+      CI: [&#x27;Africa/Abidjan&#x27;],
+      CK: [&#x27;Pacific/Rarotonga&#x27;],
+      CL: [
+        &#x27;America/Santiago&#x27;,
+        &#x27;Pacific/Easter&#x27;,
+        &#x27;Chile/Continental&#x27;,
+        &#x27;Chile/EasterIsland&#x27;
+      ],
+      CM: [&#x27;Africa/Douala&#x27;],
+      CN: [
+        &#x27;Asia/Shanghai&#x27;,
+        &#x27;Asia/Harbin&#x27;,
+        &#x27;Asia/Chongqing&#x27;,
+        &#x27;Asia/Urumqi&#x27;,
+        &#x27;Asia/Kashgar&#x27;
+      ],
+      CO: [&#x27;America/Bogota&#x27;],
+      CR: [&#x27;America/Costa_Rica&#x27;],
+      CU: [&#x27;America/Havana&#x27;],
+      CV: [&#x27;Atlantic/Cape_Verde&#x27;],
+      CW: [&#x27;America/Curacao&#x27;],
+      CX: [&#x27;Indian/Christmas&#x27;],
+      CY: [&#x27;Asia/Nicosia&#x27;],
+      CZ: [&#x27;Europe/Prague&#x27;],
+      DE: [&#x27;Europe/Berlin&#x27;],
+      DJ: [&#x27;Africa/Djibouti&#x27;],
+      DK: [&#x27;Europe/Copenhagen&#x27;],
+      DM: [&#x27;America/Dominica&#x27;],
+      DO: [&#x27;America/Santo_Domingo&#x27;],
+      DZ: [&#x27;Africa/Algiers&#x27;],
+      EC: [&#x27;America/Guayaquil&#x27;, &#x27;Pacific/Galapagos&#x27;],
+      EE: [&#x27;Europe/Tallinn&#x27;],
+      EG: [&#x27;Egypt&#x27;],
+      EH: [&#x27;Africa/El_Aaiun&#x27;],
+      ER: [&#x27;Africa/Asmara&#x27;],
+      ES: [&#x27;Europe/Madrid&#x27;, &#x27;Africa/Ceuta&#x27;, &#x27;Atlantic/Canary&#x27;],
+      ET: [&#x27;Africa/Addis_Ababa&#x27;],
+      FI: [&#x27;Europe/Helsinki&#x27;],
+      FJ: [&#x27;Pacific/Fiji&#x27;],
+      FK: [&#x27;Atlantic/Stanley&#x27;],
+      FM: [&#x27;Pacific/Chuuk&#x27;, &#x27;Pacific/Pohnpei&#x27;, &#x27;Pacific/Kosrae&#x27;],
+      FO: [&#x27;Atlantic/Faroe&#x27;],
+      FR: [&#x27;Europe/Paris&#x27;],
+      GA: [&#x27;Africa/Libreville&#x27;],
+      GB: [&#x27;Europe/London&#x27;],
+      GD: [&#x27;America/Grenada&#x27;],
+      GE: [&#x27;Asia/Tbilisi&#x27;],
+      GF: [&#x27;America/Cayenne&#x27;],
+      GG: [&#x27;Europe/Guernsey&#x27;],
+      GH: [&#x27;Africa/Accra&#x27;],
+      GI: [&#x27;Europe/Gibraltar&#x27;],
+      GL: [
+        &#x27;America/Godthab&#x27;,
+        &#x27;America/Danmarkshavn&#x27;,
+        &#x27;America/Scoresbysund&#x27;,
+        &#x27;America/Thule&#x27;
+      ],
+      GM: [&#x27;Africa/Banjul&#x27;],
+      GN: [&#x27;Africa/Conakry&#x27;],
+      GP: [&#x27;America/Guadeloupe&#x27;],
+      GQ: [&#x27;Africa/Malabo&#x27;],
+      GR: [&#x27;Europe/Athens&#x27;],
+      GS: [&#x27;Atlantic/South_Georgia&#x27;],
+      GT: [&#x27;America/Guatemala&#x27;],
+      GU: [&#x27;Pacific/Guam&#x27;],
+      GW: [&#x27;Africa/Bissau&#x27;],
+      GY: [&#x27;America/Guyana&#x27;],
+      HK: [&#x27;Asia/Hong_Kong&#x27;],
+      HN: [&#x27;America/Tegucigalpa&#x27;],
+      HR: [&#x27;Europe/Zagreb&#x27;],
+      HT: [&#x27;America/Port-au-Prince&#x27;],
+      HU: [&#x27;Europe/Budapest&#x27;],
+      ID: [&#x27;Asia/Jakarta&#x27;, &#x27;Asia/Pontianak&#x27;, &#x27;Asia/Makassar&#x27;, &#x27;Asia/Jayapura&#x27;],
+      IE: [&#x27;Europe/Dublin&#x27;],
+      IL: [&#x27;Asia/Jerusalem&#x27;],
+      IM: [&#x27;Europe/Isle_of_Man&#x27;],
+      IN: [&#x27;Asia/Kolkata&#x27;],
+      IO: [&#x27;Indian/Chagos&#x27;],
+      IQ: [&#x27;Asia/Baghdad&#x27;],
+      IR: [&#x27;Asia/Tehran&#x27;],
+      IS: [&#x27;Atlantic/Reykjavik&#x27;],
+      IT: [&#x27;Europe/Rome&#x27;],
+      JE: [&#x27;Europe/Jersey&#x27;],
+      JM: [&#x27;America/Jamaica&#x27;],
+      JO: [&#x27;Asia/Amman&#x27;],
+      JP: [&#x27;Asia/Tokyo&#x27;],
+      KE: [&#x27;Africa/Nairobi&#x27;],
+      KG: [&#x27;Asia/Bishkek&#x27;],
+      KH: [&#x27;Asia/Phnom_Penh&#x27;],
+      KI: [&#x27;Pacific/Tarawa&#x27;, &#x27;Pacific/Enderbury&#x27;, &#x27;Pacific/Kiritimati&#x27;],
+      KM: [&#x27;Indian/Comoro&#x27;],
+      KN: [&#x27;America/St_Kitts&#x27;],
+      KP: [&#x27;Asia/Pyongyang&#x27;],
+      KR: [&#x27;Asia/Seoul&#x27;],
+      KW: [&#x27;Asia/Kuwait&#x27;],
+      KY: [&#x27;America/Cayman&#x27;],
+      KZ: [
+        &#x27;Asia/Almaty&#x27;,
+        &#x27;Asia/Qyzylorda&#x27;,
+        &#x27;Asia/Aqtobe&#x27;,
+        &#x27;Asia/Aqtau&#x27;,
+        &#x27;Asia/Oral&#x27;
+      ],
+      LA: [&#x27;Asia/Vientiane&#x27;],
+      LB: [&#x27;Asia/Beirut&#x27;],
+      LC: [&#x27;America/St_Lucia&#x27;],
+      LI: [&#x27;Europe/Vaduz&#x27;],
+      LK: [&#x27;Asia/Colombo&#x27;],
+      LR: [&#x27;Africa/Monrovia&#x27;],
+      LS: [&#x27;Africa/Maseru&#x27;],
+      LT: [&#x27;Europe/Vilnius&#x27;],
+      LU: [&#x27;Europe/Luxembourg&#x27;],
+      LV: [&#x27;Europe/Riga&#x27;],
+      LY: [&#x27;Africa/Tripoli&#x27;],
+      MA: [&#x27;Africa/Casablanca&#x27;],
+      MC: [&#x27;Europe/Monaco&#x27;],
+      MD: [&#x27;Europe/Chisinau&#x27;],
+      ME: [&#x27;Europe/Podgorica&#x27;],
+      MF: [&#x27;America/Marigot&#x27;],
+      MG: [&#x27;Indian/Antananarivo&#x27;],
+      MH: [&#x27;Pacific/Majuro&#x27;, &#x27;Pacific/Kwajalein&#x27;],
+      MK: [&#x27;Europe/Skopje&#x27;],
+      ML: [&#x27;Africa/Bamako&#x27;],
+      MM: [&#x27;Asia/Rangoon&#x27;],
+      MN: [&#x27;Asia/Ulaanbaatar&#x27;, &#x27;Asia/Hovd&#x27;, &#x27;Asia/Choibalsan&#x27;],
+      MO: [&#x27;Asia/Macau&#x27;],
+      MP: [&#x27;Pacific/Saipan&#x27;],
+      MQ: [&#x27;America/Martinique&#x27;],
+      MR: [&#x27;Africa/Nouakchott&#x27;],
+      MS: [&#x27;America/Montserrat&#x27;],
+      MT: [&#x27;Europe/Malta&#x27;],
+      MU: [&#x27;Indian/Mauritius&#x27;],
+      MV: [&#x27;Indian/Maldives&#x27;],
+      MW: [&#x27;Africa/Blantyre&#x27;],
+      MX: [
+        &#x27;America/Mexico_City&#x27;,
+        &#x27;America/Cancun&#x27;,
+        &#x27;America/Merida&#x27;,
+        &#x27;America/Monterrey&#x27;,
+        &#x27;America/Matamoros&#x27;,
+        &#x27;America/Mazatlan&#x27;,
+        &#x27;America/Chihuahua&#x27;,
+        &#x27;America/Ojinaga&#x27;,
+        &#x27;America/Hermosillo&#x27;,
+        &#x27;America/Tijuana&#x27;,
+        &#x27;America/Santa_Isabel&#x27;,
+        &#x27;America/Bahia_Banderas&#x27;
+      ],
+      MY: [&#x27;Asia/Kuala_Lumpur&#x27;, &#x27;Asia/Kuching&#x27;],
+      MZ: [&#x27;Africa/Maputo&#x27;],
+      NA: [&#x27;Africa/Windhoek&#x27;],
+      NC: [&#x27;Pacific/Noumea&#x27;],
+      NE: [&#x27;Africa/Niamey&#x27;],
+      NF: [&#x27;Pacific/Norfolk&#x27;],
+      NG: [&#x27;Africa/Lagos&#x27;],
+      NI: [&#x27;America/Managua&#x27;],
+      NL: [&#x27;Europe/Amsterdam&#x27;],
+      NO: [&#x27;Europe/Oslo&#x27;],
+      NP: [&#x27;Asia/Kathmandu&#x27;],
+      NR: [&#x27;Pacific/Nauru&#x27;],
+      NU: [&#x27;Pacific/Niue&#x27;],
+      NZ: [&#x27;Pacific/Auckland&#x27;, &#x27;Pacific/Chatham&#x27;],
+      OM: [&#x27;Asia/Muscat&#x27;],
+      PA: [&#x27;America/Panama&#x27;],
+      PE: [&#x27;America/Lima&#x27;],
+      PF: [&#x27;Pacific/Tahiti&#x27;, &#x27;Pacific/Marquesas&#x27;, &#x27;Pacific/Gambier&#x27;],
+      PG: [&#x27;Pacific/Port_Moresby&#x27;],
+      PH: [&#x27;Asia/Manila&#x27;],
+      PK: [&#x27;Asia/Karachi&#x27;],
+      PL: [&#x27;Europe/Warsaw&#x27;, &#x27;Poland&#x27;],
+      PM: [&#x27;America/Miquelon&#x27;],
+      PN: [&#x27;Pacific/Pitcairn&#x27;],
+      PR: [&#x27;America/Puerto_Rico&#x27;],
+      PS: [&#x27;Asia/Gaza&#x27;, &#x27;Asia/Hebron&#x27;],
+      PT: [&#x27;Europe/Lisbon&#x27;, &#x27;Atlantic/Madeira&#x27;, &#x27;Atlantic/Azores&#x27;],
+      PW: [&#x27;Pacific/Palau&#x27;],
+      PY: [&#x27;America/Asuncion&#x27;],
+      QA: [&#x27;Asia/Qatar&#x27;],
+      RE: [&#x27;Indian/Reunion&#x27;],
+      RO: [&#x27;Europe/Bucharest&#x27;],
+      RS: [&#x27;Europe/Belgrade&#x27;],
+      RU: [
+        &#x27;Europe/Kaliningrad&#x27;,
+        &#x27;Europe/Moscow&#x27;,
+        &#x27;Europe/Volgograd&#x27;,
+        &#x27;Europe/Samara&#x27;,
+        &#x27;Europe/Simferopol&#x27;,
+        &#x27;Asia/Yekaterinburg&#x27;,
+        &#x27;Asia/Omsk&#x27;,
+        &#x27;Asia/Novosibirsk&#x27;,
+        &#x27;Asia/Novokuznetsk&#x27;,
+        &#x27;Asia/Krasnoyarsk&#x27;,
+        &#x27;Asia/Irkutsk&#x27;,
+        &#x27;Asia/Yakutsk&#x27;,
+        &#x27;Asia/Khandyga&#x27;,
+        &#x27;Asia/Vladivostok&#x27;,
+        &#x27;Asia/Sakhalin&#x27;,
+        &#x27;Asia/Ust-Nera&#x27;,
+        &#x27;Asia/Magadan&#x27;,
+        &#x27;Asia/Kamchatka&#x27;,
+        &#x27;Asia/Anadyr&#x27;
+      ],
+      RW: [&#x27;Africa/Kigali&#x27;],
+      SA: [&#x27;Asia/Riyadh&#x27;],
+      SB: [&#x27;Pacific/Guadalcanal&#x27;],
+      SC: [&#x27;Indian/Mahe&#x27;],
+      SD: [&#x27;Africa/Khartoum&#x27;],
+      SE: [&#x27;Europe/Stockholm&#x27;],
+      SG: [&#x27;Asia/Singapore&#x27;],
+      SH: [&#x27;Atlantic/St_Helena&#x27;],
+      SI: [&#x27;Europe/Ljubljana&#x27;],
+      SJ: [&#x27;Arctic/Longyearbyen&#x27;],
+      SK: [&#x27;Europe/Bratislava&#x27;],
+      SL: [&#x27;Africa/Freetown&#x27;],
+      SM: [&#x27;Europe/San_Marino&#x27;],
+      SN: [&#x27;Africa/Dakar&#x27;],
+      SO: [&#x27;Africa/Mogadishu&#x27;],
+      SR: [&#x27;America/Paramaribo&#x27;],
+      SS: [&#x27;Africa/Juba&#x27;],
+      ST: [&#x27;Africa/Sao_Tome&#x27;],
+      SV: [&#x27;America/El_Salvador&#x27;],
+      SX: [&#x27;America/Lower_Princes&#x27;],
+      SY: [&#x27;Asia/Damascus&#x27;],
+      SZ: [&#x27;Africa/Mbabane&#x27;],
+      TC: [&#x27;America/Grand_Turk&#x27;],
+      TD: [&#x27;Africa/Ndjamena&#x27;],
+      TF: [&#x27;Indian/Kerguelen&#x27;],
+      TG: [&#x27;Africa/Lome&#x27;],
+      TH: [&#x27;Asia/Bangkok&#x27;],
+      TJ: [&#x27;Asia/Dushanbe&#x27;],
+      TK: [&#x27;Pacific/Fakaofo&#x27;],
+      TL: [&#x27;Asia/Dili&#x27;],
+      TM: [&#x27;Asia/Ashgabat&#x27;],
+      TN: [&#x27;Africa/Tunis&#x27;],
+      TO: [&#x27;Pacific/Tongatapu&#x27;],
+      TR: [&#x27;Europe/Istanbul&#x27;],
+      TT: [&#x27;America/Port_of_Spain&#x27;],
+      TV: [&#x27;Pacific/Funafuti&#x27;],
+      TW: [&#x27;Asia/Taipei&#x27;],
+      TZ: [&#x27;Africa/Dar_es_Salaam&#x27;],
+      UA: [&#x27;Europe/Kiev&#x27;, &#x27;Europe/Uzhgorod&#x27;, &#x27;Europe/Zaporozhye&#x27;],
+      UG: [&#x27;Africa/Kampala&#x27;],
+      UM: [&#x27;Pacific/Johnston&#x27;, &#x27;Pacific/Midway&#x27;, &#x27;Pacific/Wake&#x27;],
+      US: [
+        &#x27;America/New_York&#x27;,
+        &#x27;America/Detroit&#x27;,
+        &#x27;America/Kentucky/Louisville&#x27;,
+        &#x27;America/Kentucky/Monticello&#x27;,
+        &#x27;America/Indiana/Indianapolis&#x27;,
+        &#x27;America/Indiana/Vincennes&#x27;,
+        &#x27;America/Indiana/Winamac&#x27;,
+        &#x27;America/Indiana/Marengo&#x27;,
+        &#x27;America/Indiana/Petersburg&#x27;,
+        &#x27;America/Indiana/Vevay&#x27;,
+        &#x27;America/Chicago&#x27;,
+        &#x27;America/Indiana/Tell_City&#x27;,
+        &#x27;America/Indiana/Knox&#x27;,
+        &#x27;America/Menominee&#x27;,
+        &#x27;America/North_Dakota/Center&#x27;,
+        &#x27;America/North_Dakota/New_Salem&#x27;,
+        &#x27;America/North_Dakota/Beulah&#x27;,
+        &#x27;America/Denver&#x27;,
+        &#x27;America/Boise&#x27;,
+        &#x27;America/Phoenix&#x27;,
+        &#x27;America/Los_Angeles&#x27;,
+        &#x27;America/Anchorage&#x27;,
+        &#x27;America/Juneau&#x27;,
+        &#x27;America/Sitka&#x27;,
+        &#x27;America/Yakutat&#x27;,
+        &#x27;America/Nome&#x27;,
+        &#x27;America/Adak&#x27;,
+        &#x27;America/Metlakatla&#x27;,
+        &#x27;Pacific/Honolulu&#x27;
+      ],
+      UY: [&#x27;America/Montevideo&#x27;],
+      UZ: [&#x27;Asia/Samarkand&#x27;, &#x27;Asia/Tashkent&#x27;],
+      VA: [&#x27;Europe/Vatican&#x27;],
+      VC: [&#x27;America/St_Vincent&#x27;],
+      VE: [&#x27;America/Caracas&#x27;],
+      VG: [&#x27;America/Tortola&#x27;],
+      VI: [&#x27;America/St_Thomas&#x27;],
+      VN: [&#x27;Asia/Ho_Chi_Minh&#x27;],
+      VU: [&#x27;Pacific/Efate&#x27;],
+      WF: [&#x27;Pacific/Wallis&#x27;],
+      WS: [&#x27;Pacific/Apia&#x27;],
+      YE: [&#x27;Asia/Aden&#x27;],
+      YT: [&#x27;Indian/Mayotte&#x27;],
+      ZA: [&#x27;Africa/Johannesburg&#x27;],
+      ZM: [&#x27;Africa/Lusaka&#x27;],
+      ZW: [&#x27;Africa/Harare&#x27;]
+    }</code>
+                            </td>
+                        </tr>
+    
+    
+                </tbody>
+            </table>
+    </section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>
