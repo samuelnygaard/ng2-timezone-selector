@@ -1,8 +1,17 @@
 # ng2-timezone-selector
 
-A simple Angular module to create a timezone selector using [moment-timezone](https://github.com/moment/moment-timezone).
+A simple Angular module to create a timezone selector using [moment-timezones](https://github.com/moment/moment-timezone).
 
 ## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
+
+## New features (0.2.1)
+
+* Guess the timezone based on browser settings, usage:
+  * `<ng2-timezone-picker [(timezone)]="timezone" guess="true"></ng2-timezone-picker>`
+* Show GMT offset (equivalent with UTC offset), e.g.: `Denmark (GTM+01:00)`, usage:
+  * `<ng2-timezone-picker [(timezone)]="timezone" showOffset="true"></ng2-timezone-picker>`
+* Select timezone based on country iso code and outputs country iso code based on timezone, usage:
+  * `<ng2-timezone-picker [(timezone)]="timezone" [(country)]="countryIsoCode"></ng2-timezone-picker>`
 
 ## Installation
 
@@ -12,28 +21,15 @@ To install this library, run:
 $ npm install ng2-timezone-selector --save
 ```
 
-### Requirements
+### Requirements (IMPORTANT, use one of the following methods)
 
-The library depent on [jQuery](https://github.com/jquery/jquery) and [Select2](https://github.com/select2/select2)
+The library depent on [jQuery](https://github.com/jquery/jquery) and [select2](https://github.com/select2/select2) and [moment-timezone](https://github.com/moment/moment-timezone)
 
-```xml
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  ...
-  <!-- You will need to include the following libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-  ...
-</head>
-```
+The only file required is the select2 `css` file:
 
-Alternatively you can install the npm packages `jquery` and `select2`:
+#### 1. Method (should work for all)
 
-```bash
-$ npm install jquery select2 --save
-```
-
-And include the libraries in the `angular-cli.json` file:
+Include the css file in the `angular-cli.json` file (remember to re-run `ng serve`, after editing `angular-cli.json`):
 
 ```json
 {
@@ -43,15 +39,31 @@ And include the libraries in the `angular-cli.json` file:
   "apps": [
     {
       ...
-      "styles": [
-        "../node_modules/select2/dist/css/select2.min.css"
-      ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/select2/dist/js/select2.min.js"
       ],
       ...
     }
+```
+
+#### 2. Method (simplest)
+
+If the angular project is setup to use `*.scss` instead of `*.css`, then you can add the following `@import` to the default `*.scss` file, othen called: `styles.scss`:
+
+```scss
+@import '~select2/dist/css/select2.min.css';
+```
+
+#### 3. Method (HTML-link)
+
+Include the `css` resource from a CDN link in the `index.html` file:
+
+```xml
+<head>
+  ...
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  ...
+</head>
 ```
 
 ### Importing
@@ -90,7 +102,7 @@ Once the library is imported, you can use the component in your Angular applicat
 ```xml
 <!-- You can now use the library component
  in app.component.html with double-binding: -->
-<ng2-timezone-picker 
+<ng2-timezone-picker
     [(timezone)]="user.timezone"
     [placeholder]="placeholderString">
 </ng2-timezone-picker>
@@ -99,10 +111,12 @@ Once the library is imported, you can use the component in your Angular applicat
 ```xml
 <!-- You can now use the library component in
  app.component.html or with single-binding and a change function  -->
-<ng2-timezone-picker 
+<ng2-timezone-picker
     [timezone]="user.timezone"
     (change)="changeTimezone($event)"
-    placeholder="Select timezone">
+    placeholder="Select timezone"
+    showOffset="true"
+    guess="true">
 </ng2-timezone-picker>
 ```
 
@@ -122,13 +136,18 @@ changeTimezone(timezone) {
 
 You can configure component with the following input attributes:
 
-  * `timezone: string` - Required: must be defined. The timezone string. If you are using the Two-Way Data Binding `[(timezone)]="timezoneString"` it will change on selection of timezone. 
-  * `placeholder: string` - Optional: default = `''`. The placeholder string to show when no timezone is selected.
-  * `disabled: boolean` - Optional: default = `false`. Disable the the component.
-  * `allowClear: boolean` - Optional: default = `false`. Enabled you to clear the selection of a timezone.
+* `timezone: string` - Required: must be defined. The timezone string. If you are using the Two-Way Data Binding `[(timezone)]="timezoneString"` it will change on selection of timezone.
+* `placeholder: string` - Optional: default = `''`. The placeholder string to show when no timezone is selected.
+* `disabled: boolean` - Optional: default = `false`. Disable the the component.
+* `showOffset: boolean` - Optional: default = `false`. Condition to show GMT offset in the dropdown.
+* `guess: boolean` - Optional: default = `false`. If set to `true` and if the `timezone` parameters is `null` or `undefined` then guesses the users timezone.
+* `country: string` - Optional. The country iso-string (e.g. `'US'` / `'UK'`). If you are using the Two-Way Data Binding e.g.: `[(country)]="countryIsoCode"` it will change the timezone to the provided iso-code (if the iso code is valid), and if the timezone is changed it changes the value of `countryIsoCode` to the iso of the country.
+* `allowClear: boolean` - Optional: default = `false`. Enabled you to clear the selection of a timezone.
 
-You can configure component with the `(change)="changeFunction($event)` output attributes:
-  * `change: function($event: string)` - Trigger-function when timezone is selected or changed, the `$event` parameter is the timezone string.
+You can configure component with the `(change)="changeFunction($event)` or `(countryChange)="countryIsoCode = $event` output attributes:
+
+* `change: function($event)` - Trigger-function when timezone is selected or changed, the `$event` parameter is the timezone string.
+* `countryChange: function($event: string)` - Trigger-function when timezone is changed, the `$event` parameter is the country iso-code.
 
 ## License
 

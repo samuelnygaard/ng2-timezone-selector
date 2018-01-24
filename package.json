@@ -1,12 +1,14 @@
 {
   "name": "ng2-timezone-selector",
-  "version": "0.1.4",
-  "description": "A simple Angular module to create a timezone selector using moment-timezone",
+  "version": "0.2.1",
+  "description":
+    "A simple Angular module to create a timezone selector using moment-timezone",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ng2-timezone-selector -d docs --hideGenerator",
+    "docs:build":
+      "compodoc -p tsconfig.json -n ng2-timezone-selector -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
@@ -20,9 +22,7 @@
     "name": "Samuel Nygaard",
     "email": "teamnygaard@gmail.com"
   },
-  "keywords": [
-    "angular"
-  ],
+  "keywords": ["angular"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/samuelnygaard/ng2-timezone-selector/issues"
@@ -36,6 +36,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@compodoc/compodoc": "^1.0.0-beta.10",
     "@types/jasmine": "2.5.38",
+    "@types/jquery": "^3.3.0",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
     "core-js": "^2.4.1",
@@ -48,7 +49,7 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-coverage-istanbul-reporter": "^0.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "node-sass": "^4.5.2",
@@ -65,5 +66,10 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "moment-timezone": "^0.5.14",
+    "select2": "^4.0.6-rc.1"
   }
 }
