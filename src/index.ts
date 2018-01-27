@@ -11,6 +11,7 @@ export * from './timezone-picker.service';
 @NgModule({
   imports: [CommonModule],
   declarations: [TimezonePickerComponent, TimezonePickerPipe],
+  providers: [TimezonePickerService],
   exports: [TimezonePickerComponent, TimezonePickerPipe]
 })
 export class TimezonePickerModule {

@@ -4,7 +4,7 @@ A simple Angular module to create a timezone selector using [moment-timezones](h
 
 ## [Demo](https://samuelnygaard.github.io/ng2-timezone-selector/) | [Documentation](https://samuelnygaard.github.io/ng2-timezone-selector/docs/)
 
-## New features (0.2.2)
+## New features (0.2.3)
 
 * Guess the timezone based on browser settings, usage:
   * `<ng2-timezone-picker [(timezone)]="timezone" guess="true"></ng2-timezone-picker>`
@@ -25,11 +25,11 @@ $ npm install ng2-timezone-selector --save
 
 The library depent on [jQuery](https://github.com/jquery/jquery) and [select2](https://github.com/select2/select2) and [moment-timezone](https://github.com/moment/moment-timezone)
 
-The only file required is the select2 `css` file:
+The only file required is the select2 `select2.min.css` file:
 
 #### 1. Method (should work for all)
 
-Include the css file in the `angular-cli.json` file (remember to re-run `ng serve`, after editing `angular-cli.json`):
+Include the `select2.min.css` file in the `angular-cli.json` file (remember to re-run `ng serve`, after editing `angular-cli.json`):
 
 ```json
 {
@@ -39,8 +39,9 @@ Include the css file in the `angular-cli.json` file (remember to re-run `ng serv
   "apps": [
     {
       ...
-      "scripts": [
-        "../node_modules/select2/dist/js/select2.min.js"
+      "styles": [
+        "styles.scss",
+        "../node_modules/select2/dist/css/select2.min.css"
       ],
       ...
     }
