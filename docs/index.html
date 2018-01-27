@@ -332,7 +332,7 @@
 <h1 id="ng2-timezone-selector">ng2-timezone-selector</h1>
 <p>A simple Angular module to create a timezone selector using <a href="https://github.com/moment/moment-timezone">moment-timezones</a>.</p>
 <h2 id="-demo-https-samuelnygaard-github-io-ng2-timezone-selector-documentation-https-samuelnygaard-github-io-ng2-timezone-selector-docs-"><a href="https://samuelnygaard.github.io/ng2-timezone-selector/">Demo</a> | <a href="https://samuelnygaard.github.io/ng2-timezone-selector/docs/">Documentation</a></h2>
-<h2 id="new-features-0-2-2-">New features (0.2.2)</h2>
+<h2 id="new-features-0-2-3-">New features (0.2.3)</h2>
 <ul>
 <li>Guess the timezone based on browser settings, usage:<ul>
 <li><code>&lt;ng2-timezone-picker [(timezone)]=&quot;timezone&quot; guess=&quot;true&quot;&gt;&lt;/ng2-timezone-picker&gt;</code></li>
@@ -351,9 +351,9 @@
 <p>To install this library, run:</p>
 <pre class="line-numbers"><code class="language-bash">$ npm install ng2-timezone-selector --save</code></pre><h3 id="requirements-important-use-one-of-the-following-methods-">Requirements (IMPORTANT, use one of the following methods)</h3>
 <p>The library depent on <a href="https://github.com/jquery/jquery">jQuery</a> and <a href="https://github.com/select2/select2">select2</a> and <a href="https://github.com/moment/moment-timezone">moment-timezone</a></p>
-<p>The only file required is the select2 <code>css</code> file:</p>
+<p>The only file required is the select2 <code>select2.min.css</code> file:</p>
 <h4 id="1-method-should-work-for-all-">1. Method (should work for all)</h4>
-<p>Include the css file in the <code>angular-cli.json</code> file (remember to re-run <code>ng serve</code>, after editing <code>angular-cli.json</code>):</p>
+<p>Include the <code>select2.min.css</code> file in the <code>angular-cli.json</code> file (remember to re-run <code>ng serve</code>, after editing <code>angular-cli.json</code>):</p>
 <pre class="line-numbers"><code class="language-json">{
   &quot;project&quot;: {
     ...
@@ -361,8 +361,9 @@
   &quot;apps&quot;: [
     {
       ...
-      &quot;scripts&quot;: [
-        &quot;../node_modules/select2/dist/js/select2.min.js&quot;
+      &quot;styles&quot;: [
+        &quot;styles.scss&quot;,
+        &quot;../node_modules/select2/dist/css/select2.min.css&quot;
       ],
       ...
     }</code></pre><h4 id="2-method-simplest-">2. Method (simplest)</h4>
