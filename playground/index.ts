@@ -6,18 +6,18 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { TimezonePickerModule } from '../dist';
+import { SimpleTimezonePickerModule } from '../dist';
 
 @Component({
   selector: 'app',
-  template: `<ng2-timezone-picker guess="true"></ng2-timezone-picker>`
+  template: `<ng2-simple-picker></ng2-simple-picker>`
 })
 class AppComponent {}
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
-  imports: [BrowserModule, TimezonePickerModule]
+  imports: [BrowserModule, SimpleTimezonePickerModule]
 })
 class AppModule {}
 

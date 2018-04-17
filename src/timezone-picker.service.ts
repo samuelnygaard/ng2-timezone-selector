@@ -1,24 +1,38 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment-timezone';
 
 export interface Timezone {
   iso: string;
   zones: string[];
 }
 
+export interface Zone {
+  name: string;
+  zone: string;
+}
+
+export interface SimpleZone extends Zone {
+  utcOffset: number;
+  utcOffsetString: string;
+}
+
 @Injectable()
 export class TimezonePickerService {
-
   /**
    * Convert country ISO code to country name (in english)
    */
-  iso2country(iso: string): string {
-    return countryList[iso] ? countryList[iso] : iso;
+  public iso2country(iso: string): string {
+    if (countryList[iso] !== undefined && countryList[iso] !== null) {
+      return countryList[iso];
+    } else {
+      return iso;
+    }
   }
 
   /**
    * Gets the list of ISO-codes for all countries
    */
-  getCountries(): string[] {
+  public getCountries(): string[] {
     const res: string[] = [];
     for (const prop of Object.keys(countryList)) {
       res.push(prop);
@@ -29,15 +43,88 @@ export class TimezonePickerService {
   /**
    * Get the timezones for each country
    */
-  getZones(): Timezone[] {
-    const res = [];
+  public getZones(): Timezone[] {
+    const res: Timezone[] = [];
     for (const prop of Object.keys(zones)) {
       res.push({
         iso: prop,
         zones: zones[prop]
       });
     }
+
+    // Sort by country name
+    res.sort((a, b) => {
+      const aText = this.iso2country(a.iso).toUpperCase();
+      const bText = this.iso2country(b.iso).toUpperCase();
+      return aText < bText ? -1 : aText > bText ? 1 : 0;
+    });
+
     return res;
+  }
+
+  public getSimpleZones(): Zone[] {
+    return simpleZones;
+  }
+
+  public simpleZoneToName(zone: string) {
+    const res = simpleZones.find(
+      x => x.zone.toLowerCase() === zone.toLowerCase()
+    );
+    if (res) {
+      return res.name;
+    } else {
+      return zone;
+    }
+  }
+
+  public guessSimpleZone(zone: string = null) {
+    let input: string = moment.tz.guess().toString();
+    if (zone !== null) {
+      input = zone;
+    }
+    const res = simpleZones.find(
+      x => x.zone.toLowerCase() === input.toLowerCase()
+    );
+    if (res) {
+      return res.zone;
+    } else {
+      const offset: number = moment.tz(input).utcOffset();
+      let bestMatch: { diff: number; zone: string };
+      simpleZones.forEach(z => {
+        const zOffset: number = moment.tz(z.zone).utcOffset();
+        const offsetDiff = offset - zOffset;
+        if (!bestMatch) {
+          bestMatch = { diff: offsetDiff, zone: z.zone };
+        } else if (bestMatch.diff > Math.abs(offsetDiff)) {
+          bestMatch = { diff: offsetDiff, zone: z.zone };
+        }
+      });
+      return bestMatch.zone;
+    }
+  }
+
+  public offsetOfTimezone(zone: string, useUTC = false): string {
+    let offset: number = moment.tz(zone).utcOffset();
+    const neg = offset < 0;
+    if (neg) {
+      offset = -1 * offset;
+    }
+    const hours = Math.floor(offset / 60);
+    const minutes = (offset / 60 - hours) * 60;
+    return `(${useUTC ? 'GMT' : 'UTC'}${neg ? '-' : '+'}${this.rjust(
+      hours.toString(),
+      2
+    )}:${this.rjust(minutes.toString(), 2)})`;
+  }
+
+  private rjust(string: string, width: number, padding = '0'): string {
+    padding = padding || ' ';
+    padding = padding.substr(0, 1);
+    if (string.length < width) {
+      return padding.repeat(width - string.length) + string;
+    } else {
+      return string;
+    }
   }
 }
 
@@ -113,7 +200,7 @@ const zones = {
   BM: ['Atlantic/Bermuda'],
   BN: ['Asia/Brunei'],
   BO: ['America/La_Paz'],
-  BQ: ['America/Kralendijk'],
+  // BQ: ['America/Kralendijk'], // Special municipality of the Netherlands
   BR: [
     'America/Noronha',
     'America/Belem',
@@ -349,7 +436,7 @@ const zones = {
   PG: ['Pacific/Port_Moresby'],
   PH: ['Asia/Manila'],
   PK: ['Asia/Karachi'],
-  PL: ['Europe/Warsaw', 'Poland'],
+  PL: ['Europe/Warsaw'],
   PM: ['America/Miquelon'],
   PN: ['Pacific/Pitcairn'],
   PR: ['America/Puerto_Rico'],
@@ -526,12 +613,13 @@ const countryList = {
   CO: 'Colombia',
   KM: 'Comoros',
   CG: 'Congo (Brazzaville)',
-  CD: 'Congo, (Kinshasa)',
+  CD: 'Congo (Kinshasa)',
   CK: 'Cook Islands',
   CR: 'Costa Rica',
-  CI: "Côte d'Ivoire",
+  CI: 'Ivory Coast',
   HR: 'Croatia',
   CU: 'Cuba',
+  CW: 'Curacao',
   CY: 'Cyprus',
   CZ: 'Czech Republic',
   DK: 'Denmark',
@@ -545,7 +633,7 @@ const countryList = {
   ER: 'Eritrea',
   EE: 'Estonia',
   ET: 'Ethiopia',
-  FK: 'Falkland Islands (Malvinas)',
+  FK: 'Falkland Islands',
   FO: 'Faroe Islands',
   FJ: 'Fiji',
   FI: 'Finland',
@@ -590,11 +678,11 @@ const countryList = {
   KZ: 'Kazakhstan',
   KE: 'Kenya',
   KI: 'Kiribati',
-  KP: 'Korea (North)',
-  KR: 'Korea (South)',
+  KP: 'North Korea',
+  KR: 'South Korea',
   KW: 'Kuwait',
   KG: 'Kyrgyzstan',
-  LA: 'Lao PDR',
+  LA: 'Laos',
   LV: 'Latvia',
   LB: 'Lebanon',
   LS: 'Lesotho',
@@ -673,6 +761,7 @@ const countryList = {
   SC: 'Seychelles',
   SL: 'Sierra Leone',
   SG: 'Singapore',
+  SX: 'Sint Maarten',
   SK: 'Slovakia',
   SI: 'Slovenia',
   SB: 'Solomon Islands',
@@ -707,13 +796,13 @@ const countryList = {
   UA: 'Ukraine',
   AE: 'United Arab Emirates',
   GB: 'United Kingdom (GB)',
-  US: 'United States of America (USA)',
+  US: 'United States (USA)',
   UM: 'US Minor Outlying Islands',
   UY: 'Uruguay',
   UZ: 'Uzbekistan',
   VU: 'Vanuatu',
   VE: 'Venezuela',
-  VN: 'Viet Nam',
+  VN: 'Vietnam',
   VI: 'Virgin Islands, US',
   WF: 'Wallis and Futuna Islands',
   EH: 'Western Sahara',
@@ -721,3 +810,138 @@ const countryList = {
   ZM: 'Zambia',
   ZW: 'Zimbabwe'
 };
+
+const simpleZones: Zone[] = [
+  { zone: 'Pacific/Midway', name: 'Midway Island, American Samoa' },
+  { zone: 'America/Adak', name: 'Aleutian Islands' },
+  { zone: 'Pacific/Honolulu', name: 'Hawaii' },
+  { zone: 'Pacific/Marquesas', name: 'Marquesas Islands' },
+  { zone: 'America/Anchorage', name: 'Alaska' },
+  { zone: 'America/Tijuana', name: 'Baja California' },
+  { zone: 'America/Los_Angeles', name: 'Pacific Time (US and Canada)' },
+  { zone: 'America/Phoenix', name: 'Arizona' },
+  { zone: 'America/Chihuahua', name: 'Chihuahua, La Paz, Mazatlan' },
+  { zone: 'America/Denver', name: 'Mountain Time (US and Canada)' },
+  { zone: 'America/Belize', name: 'Central America' },
+  { zone: 'America/Chicago', name: 'Central Time (US and Canada)' },
+  { zone: 'Pacific/Easter', name: 'Easter Island' },
+  { zone: 'America/Mexico_City', name: 'Guadalajara, Mexico City, Monterrey' },
+  { zone: 'America/Regina', name: 'Saskatchewan' },
+  { zone: 'America/Bogota', name: 'Bogota, Lima, Quito' },
+  { zone: 'America/Cancun', name: 'Chetumal' },
+  { zone: 'America/New_York', name: 'Eastern Time (US and Canada)' },
+  { zone: 'America/Port-au-Prince', name: 'Haiti' },
+  { zone: 'America/Havana', name: 'Havana' },
+  { zone: 'America/Indiana/Indianapolis', name: 'Indiana (East)' },
+  { zone: 'America/Asuncion', name: 'Asuncion' },
+  { zone: 'America/Halifax', name: 'Atlantic Time (Canada)' },
+  { zone: 'America/Caracas', name: 'Caracas' },
+  { zone: 'America/Cuiaba', name: 'Cuiaba' },
+  { zone: 'America/Manaus', name: 'Georgetown, La Paz, Manaus, San Juan' },
+  { zone: 'America/Santiago', name: 'Santiago' },
+  { zone: 'America/Grand_Turk', name: 'Turks and Caicos' },
+  { zone: 'America/St_Johns', name: 'Newfoundland' },
+  { zone: 'America/Fortaleza', name: 'Araguaina' },
+  { zone: 'America/Sao_Paulo', name: 'Brasilia' },
+  { zone: 'America/Cayenne', name: 'Cayenne, Fortaleza' },
+  { zone: 'America/Buenos_Aires', name: 'City of Buenos Aires' },
+  { zone: 'America/Godthab', name: 'Greenland' },
+  { zone: 'America/Montevideo', name: 'Montevideo' },
+  { zone: 'America/Miquelon', name: 'Saint Pierre and Miquelon' },
+  { zone: 'America/Bahia', name: 'Salvador' },
+  { zone: 'America/Noronha', name: 'Fernando de Noronha' },
+  { zone: 'Atlantic/Azores', name: 'Azores' },
+  { zone: 'Atlantic/Cape_Verde', name: 'Cabo Verde Islands' },
+  { zone: 'Africa/Casablanca', name: 'Casablanca' },
+  { zone: 'Europe/London', name: 'Dublin, Edinburgh, Lisbon, London' },
+  { zone: 'Africa/Monrovia', name: 'Monrovia, Reykjavik' },
+  {
+    zone: 'Europe/Amsterdam',
+    name: 'Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna'
+  },
+  {
+    zone: 'Europe/Belgrade',
+    name: 'Belgrade, Bratislava, Budapest, Ljubljana, Prague'
+  },
+  { zone: 'Europe/Brussels', name: 'Brussels, Copenhagen, Madrid, Paris' },
+  { zone: 'Europe/Warsaw', name: 'Sarajevo, Skopje, Warsaw, Zagreb' },
+  { zone: 'Africa/Algiers', name: 'West Central Africa' },
+  { zone: 'Africa/Windhoek', name: 'Windhoek' },
+  { zone: 'Asia/Amman', name: 'Amman' },
+  { zone: 'Europe/Athens', name: 'Athens, Bucharest' },
+  { zone: 'Asia/Beirut', name: 'Beirut' },
+  { zone: 'Africa/Cairo', name: 'Cairo' },
+  { zone: 'Asia/Damascus', name: 'Damascus' },
+  { zone: 'Asia/Gaza', name: 'Gaza, Hebron' },
+  { zone: 'Africa/Harare', name: 'Harare, Pretoria' },
+  {
+    zone: 'Europe/Helsinki',
+    name: 'Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius'
+  },
+  { zone: 'Asia/Jerusalem', name: 'Jerusalem' },
+  { zone: 'Europe/Kaliningrad', name: 'Kaliningrad' },
+  { zone: 'Africa/Tripoli', name: 'Tripoli' },
+  { zone: 'Asia/Baghdad', name: 'Baghdad' },
+  { zone: 'Asia/Istanbul', name: 'Istanbul' },
+  { zone: 'Asia/Kuwait', name: 'Kuwait, Riyadh' },
+  { zone: 'Europe/Minsk', name: 'Minsk' },
+  { zone: 'Europe/Moscow', name: 'Moscow, St. Petersburg, Volgograd' },
+  { zone: 'Africa/Nairobi', name: 'Nairobi' },
+  { zone: 'Asia/Tehran', name: 'Tehran' },
+  { zone: 'Asia/Muscat', name: 'Abu Dhabi, Muscat' },
+  { zone: 'Europe/Astrakhan', name: 'Astrakhan, Ulyanovsk' },
+  { zone: 'Asia/Baku', name: 'Baku' },
+  { zone: 'Europe/Samara', name: 'Izhevsk, Samara' },
+  { zone: 'Indian/Mauritius', name: 'Port Louis' },
+  { zone: 'Asia/Tbilisi', name: 'Tbilisi' },
+  { zone: 'Asia/Yerevan', name: 'Yerevan' },
+  { zone: 'Asia/Kabul', name: 'Kabul' },
+  { zone: 'Asia/Tashkent', name: 'Tashkent, Ashgabat' },
+  { zone: 'Asia/Yekaterinburg', name: 'Ekaterinburg' },
+  { zone: 'Asia/Karachi', name: 'Islamabad, Karachi' },
+  { zone: 'Asia/Kolkata', name: 'Chennai, Kolkata, Mumbai, New Delhi' },
+  { zone: 'Asia/Colombo', name: 'Sri Jayawardenepura' },
+  { zone: 'Asia/Katmandu', name: 'Kathmandu' },
+  { zone: 'Asia/Almaty', name: 'Astana' },
+  { zone: 'Asia/Dhaka', name: 'Dhaka' },
+  { zone: 'Asia/Rangoon', name: 'Yangon (Rangoon)' },
+  { zone: 'Asia/Novosibirsk', name: 'Novosibirsk' },
+  { zone: 'Asia/Bangkok', name: 'Bangkok, Hanoi, Jakarta' },
+  { zone: 'Asia/Barnaul', name: 'Barnaul, Gorno-Altaysk' },
+  { zone: 'Asia/Hovd', name: 'Hovd' },
+  { zone: 'Asia/Krasnoyarsk', name: 'Krasnoyarsk' },
+  { zone: 'Asia/Tomsk', name: 'Tomsk' },
+  { zone: 'Asia/Chongqing', name: 'Beijing, Chongqing, Hong Kong SAR, Urumqi' },
+  { zone: 'Asia/Irkutsk', name: 'Irkutsk' },
+  { zone: 'Asia/Kuala_Lumpur', name: 'Kuala Lumpur, Singapore' },
+  { zone: 'Australia/Perth', name: 'Perth' },
+  { zone: 'Asia/Taipei', name: 'Taipei' },
+  { zone: 'Asia/Ulaanbaatar', name: 'Ulaanbaatar' },
+  { zone: 'Asia/Pyongyang', name: 'Pyongyang' },
+  { zone: 'Australia/Eucla', name: 'Eucla' },
+  { zone: 'Asia/Chita', name: 'Chita' },
+  { zone: 'Asia/Tokyo', name: 'Osaka, Sapporo, Tokyo' },
+  { zone: 'Asia/Seoul', name: 'Seoul' },
+  { zone: 'Asia/Yakutsk', name: 'Yakutsk' },
+  { zone: 'Australia/Adelaide', name: 'Adelaide' },
+  { zone: 'Australia/Darwin', name: 'Darwin' },
+  { zone: 'Australia/Brisbane', name: 'Brisbane' },
+  { zone: 'Australia/Canberra', name: 'Canberra, Melbourne, Sydney' },
+  { zone: 'Pacific/Guam', name: 'Guam, Port Moresby' },
+  { zone: 'Australia/Hobart', name: 'Hobart' },
+  { zone: 'Asia/Vladivostok', name: 'Vladivostok' },
+  { zone: 'Australia/Lord_Howe', name: 'Lord Howe Island' },
+  { zone: 'Pacific/Bougainville', name: 'Bougainville Island' },
+  { zone: 'Asia/Srednekolymsk', name: 'Chokirdakh' },
+  { zone: 'Asia/Magadan', name: 'Magadan' },
+  { zone: 'Pacific/Norfolk', name: 'Norfolk Island' },
+  { zone: 'Asia/Sakhalin', name: 'Sakhalin' },
+  { zone: 'Pacific/Guadalcanal', name: 'Solomon Islands, New Caledonia' },
+  { zone: 'Asia/Anadyr', name: 'Anadyr, Petropavlovsk-Kamchatsky' },
+  { zone: 'Pacific/Auckland', name: 'Auckland, Wellington' },
+  { zone: 'Pacific/Fiji', name: 'Fiji Islands' },
+  { zone: 'Pacific/Chatham', name: 'Chatham Islands' },
+  { zone: 'Pacific/Tongatapu', name: 'Nuku\'alofa' },
+  { zone: 'Pacific/Apia', name: 'Samoa' },
+  { zone: 'Pacific/Kiritimati', name: 'Kiritimati Island' }
+];

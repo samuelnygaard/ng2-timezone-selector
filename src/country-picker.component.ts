@@ -1,4 +1,4 @@
-import { TimezonePickerService, Timezone } from './timezone-picker.service';
+import { TimezonePickerService } from './timezone-picker.service';
 import {
   Component,
   AfterViewInit,
@@ -8,32 +8,23 @@ import {
   EventEmitter,
   Output
 } from '@angular/core';
-import * as moment from 'moment-timezone';
-import { $ } from 'jquery';
+import $ from 'jquery';
 import 'select2';
+import { TimezonePickerPipe } from './timezone-picker.pipe';
 
 @Component({
-  selector: 'ng2-timezone-picker',
+  selector: 'ng2-country-picker',
   template: `
   <select #select id="select" style="width: 100%" class="form-control" [disabled]="disabled">
     <option></option>
-    <ng-template let-c ngFor [ngForOf]="allTimezones">
-      <optgroup *ngIf="c.zones.length > 1" [label]="c.iso | iso2CountryPipe">
-        <option *ngFor="let t of c.zones" [value]="t">{{c.iso | iso2CountryPipe}} - {{formatTimezoneString(t)}}
-            <span *ngIf="showOffset">{{service.offsetOfTimezone(t)}}</span>
-        </option>
-      </optgroup>
-        <option *ngIf="c.zones.length === 1" [value]="c.zones[0]">{{c.iso | iso2CountryPipe}}
-          <span *ngIf="showOffset">{{service.offsetOfTimezone(c.zones[0])}}</span>
-      </option>
-    </ng-template>
+    <option *ngFor="let c of countries" [value]="c">{{c | iso2CountryPipe}}</option>
   </select>`
 })
-export class TimezonePickerComponent implements AfterViewInit {
+export class CountryPickerComponent implements AfterViewInit {
   /**
    * all time zones combined in one array, for each country
    */
-  allTimezones: Timezone[];
+  countries: string[];
   /**
    * ElementRef for the select element
    */
@@ -44,16 +35,12 @@ export class TimezonePickerComponent implements AfterViewInit {
    */
   @Input() allowClear = false;
 
-  @Input() showOffset = false;
-
-  @Input() guess = false;
-
   /**
    * Input (optional) bound to [disabled]
    */
   @Input() disabled = false;
 
-  placeholderString = 'Select timezone';
+  placeholderString = 'Select country';
 
   /**
    * Input (optional) bound to [placeholder]
@@ -74,48 +61,37 @@ export class TimezonePickerComponent implements AfterViewInit {
   /**
    * The current selected timezone.
    */
-  currentTimezone: string;
+  currentCountry: string;
   /**
    * Input: string (required) bound to [timezone]
    */
   @Input()
-  set timezone(timezone: string) {
-    if (timezone) {
-      this.currentTimezone = timezone;
+  set country(country: string) {
+    if (country) {
+      this.currentCountry = country;
       this.triggerChangeEvent();
-    } else if (this.guess) {
-      this.currentTimezone = moment.tz.guess();
-      this.triggerChangeEvent();
-    }
-  }
-
-  @Input()
-  set country(isoCode: string) {
-    if (isoCode && !this.currentTimezone && !this.guess) {
-      const res = this.allTimezones.find(x => x.iso === isoCode);
-      if (res) {
-        this.currentTimezone = res.zones[0];
-        this.triggerChangeEvent();
-      }
     }
   }
 
   /**
    * Output event bound to (timezone)
    */
-  @Output() timezoneChange = new EventEmitter<string>();
+  @Output() countryChange = new EventEmitter<string>();
+  @Output() countryNameChange = new EventEmitter<string>();
 
   /**
    * Output event bound to (change)
    */
   @Output() change = new EventEmitter<string>();
-  @Output() countryChange = new EventEmitter<string>();
 
   /**
    * Contructor function to define all the timezones
    */
-  constructor(public service: TimezonePickerService) {
-    this.allTimezones = service.getZones();
+  constructor(
+    public service: TimezonePickerService,
+    private countryPipe: TimezonePickerPipe
+  ) {
+    this.countries = service.getCountries();
   }
 
   /**
@@ -130,9 +106,9 @@ export class TimezonePickerComponent implements AfterViewInit {
       matcher: (term, text) => this.matcher(term, text)
     });
 
-    if (this.currentTimezone) {
+    if (this.currentCountry) {
       $(selectElement)
-        .val(this.currentTimezone)
+        .val(this.currentCountry)
         .trigger('change');
     }
 
@@ -143,30 +119,25 @@ export class TimezonePickerComponent implements AfterViewInit {
 
   private triggerChangeEvent(): void {
     $(this.select.nativeElement)
-      .val(this.currentTimezone)
+      .val(this.currentCountry)
       .trigger('change');
-    this.timezoneChange.emit(this.currentTimezone);
-    this.change.emit(this.currentTimezone);
-    this.countryChange.emit(
-      this.allTimezones.find(x => x.zones.indexOf(this.currentTimezone) >= 0)
-        .iso
+    this.countryChange.emit(this.currentCountry);
+    this.countryNameChange.emit(
+      this.countryPipe.transform(this.currentCountry)
     );
+    this.change.emit(this.currentCountry);
   }
-
-  formatTimezoneString(zone: string): string {
-    const arr = zone.split('/');
-    return arr[arr.length - 1].replace('_', ' ');
-  }
-
-
 
   /**
    * onChange function called by the "select" element
    * @param timezone The timezone string selected
    */
   private onChange(timezone) {
-    this.currentTimezone = timezone;
-    this.timezoneChange.emit(timezone);
+    this.currentCountry = timezone;
+    this.countryChange.emit(timezone);
+    this.countryNameChange.emit(
+      this.countryPipe.transform(this.currentCountry)
+    );
     this.change.emit(timezone);
   }
 
@@ -217,5 +188,15 @@ export class TimezonePickerComponent implements AfterViewInit {
     }
     // If it doesn't contain the term, don't return anything
     return null;
+  }
+
+  private rjust(string: string, width: number, padding = '0'): string {
+    padding = padding || ' ';
+    padding = padding.substr(0, 1);
+    if (string.length < width) {
+      return padding.repeat(width - string.length) + string;
+    } else {
+      return string;
+    }
   }
 }
