@@ -1,6 +1,6 @@
 {
   "name": "ng2-timezone-selector",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description":
     "A simple Angular module to create a timezone selector using moment-timezone",
   "repository": {
@@ -34,7 +34,7 @@
   "jsnext:main": "ng2-timezone-selector.js",
   "typings": "ng2-timezone-selector.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
+    "@angular/core": "^4.0.0 || ^5.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
