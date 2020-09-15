@@ -454,6 +454,7 @@ const zones = {
     'America/Metlakatla',
     'Pacific/Honolulu'
   ],
+  UTC: ['Etc/UTC'],
   UY: ['America/Montevideo'],
   UZ: ['Asia/Samarkand', 'Asia/Tashkent'],
   VA: ['Europe/Vatican'],
@@ -708,6 +709,7 @@ const countryList = {
   AE: 'United Arab Emirates',
   GB: 'United Kingdom (GB)',
   US: 'United States of America (USA)',
+  UTC: 'UTC',
   UM: 'US Minor Outlying Islands',
   UY: 'Uruguay',
   UZ: 'Uzbekistan',
